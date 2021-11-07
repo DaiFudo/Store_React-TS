@@ -1,0 +1,16 @@
+{
+    "products":[
+       {
+          "name":"Keyboard Razer Blackwindow",
+          "id":1,
+          "price": 37,
+          "promotion": null
+       },
+        {
+          "name":"Mouse Razer Mamba TO",
+          "id":2,
+          "price": 12,   
+          "promotion": null  
+       }
+    ]
+ }
