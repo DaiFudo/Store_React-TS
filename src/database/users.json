@@ -1,16 +1,58 @@
 {
-    "users":[
-       {
-          "username":"fudo",
-          "password":111,
-          "id":1,
-          "access":true
-       },
-       {
-          "username":"Kirill",
-          "password":111,
-          "id":2,
-          "access":false
-       }
-    ]
- }
+   "users":[
+      {
+         "user":[
+            {
+               "nicknickname":"Dai_Fudo",
+               "password":111,
+               "id":1,
+               "admin": true
+            },
+            {
+               "nickname":"Wike",
+               "password":111,
+               "id":2,
+               "admin": true
+            },
+            {
+               "nickname":"test",
+               "password":111,
+               "id":3,
+               "admin": true
+            },
+            {
+               "nickname":"test2",
+               "password":111,
+               "id":4,
+               "admin": false
+            },
+            {
+               "nickname":"user",
+               "password":"user",
+               "id":5,
+               "admin": false
+            }
+         ],
+         "ban":[
+            {
+               "nickname":"AdminPetyx",
+               "password":"user",
+               "id":5,
+               "admin": false
+            },
+            {
+               "nickname":"Lox",
+               "password":"user",
+               "id":5,
+               "admin": false
+            },
+            {
+               "nickname":"ZabanMenya",
+               "password":"user",
+               "id":5,
+               "admin": false
+            }
+         ]
+      }
+   ]
+}
