@@ -24,8 +24,8 @@ const MenuList: React.FC = () => {
           >
             <SubMenu key="su123b1" title="Electronics">
               <Menu.ItemGroup key="g112323122" title="Mouses">
-                <Menu.Item key="11123">Option 1</Menu.Item>
-                <Menu.Item key="21131223">Option 2</Menu.Item>
+                <Menu.Item key="11123">Razer</Menu.Item>
+                <Menu.Item key="21131223">Microsoft</Menu.Item>
               </Menu.ItemGroup>
               <Menu.ItemGroup key="g123122" title="Item 2">
                 <Menu.Item key="31131">Option 3</Menu.Item>
