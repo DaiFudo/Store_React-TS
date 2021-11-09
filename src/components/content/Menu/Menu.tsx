@@ -13,34 +13,30 @@ const MenuList: React.FC = () => {
   };
   return (
     <>
-      <Row>
-        <Col span={6}>
+      <Row justify="start">
+        <Col>
           <Menu
             onClick={() => handleClick}
-            style={{ width: 256 }}
+            style={{ width: 230 }}
             defaultSelectedKeys={["1"]}
             defaultOpenKeys={["sub1"]}
             mode="inline"
           >
-            <SubMenu key="su123b1" title="Electronics">
-              <Menu.ItemGroup key="g112323122" title="Mouses">
-                <Menu.Item key="11123">Option 1</Menu.Item>
-                <Menu.Item key="21131223">Option 2</Menu.Item>
-              </Menu.ItemGroup>
-              <Menu.ItemGroup key="g123122" title="Item 2">
-                <Menu.Item key="31131">Option 3</Menu.Item>
-                <Menu.Item key="412312">Option 4</Menu.Item>
-              </Menu.ItemGroup>
+            <SubMenu key="su123b1" title="Devices">
+              <SubMenu key="g112323122" title="Mouses">
+                <Menu.Item key="11123">Razer</Menu.Item>
+                <Menu.Item key="21131223">Microsoft</Menu.Item>
+              </SubMenu>
+              <SubMenu key="g212saad312" title="Keyboards">
+                <Menu.Item key="1123">Razer</Menu.Item>
+                <Menu.Item key="2123">Sinergi</Menu.Item>
+              </SubMenu>
             </SubMenu>
-            <SubMenu key="sub2123" title="Keyboards">
-              <Menu.ItemGroup key="g212312" title="Item 1">
-                <Menu.Item key="1123">Option 1</Menu.Item>
-                <Menu.Item key="2123">Option 2</Menu.Item>
-              </Menu.ItemGroup>
-              <Menu.ItemGroup key="g3123" title="Item 2">
-                <Menu.Item key="3123">Option 3</Menu.Item>
-                <Menu.Item key="4123">Option 4</Menu.Item>
-              </Menu.ItemGroup>
+            <SubMenu key="subsad2123" title="Components">
+              <SubMenu key="g21as2312" title="CPU">
+                <Menu.Item key="11asd23">AMD</Menu.Item>
+                <Menu.Item key="21asd23">INTEL</Menu.Item>
+              </SubMenu>
             </SubMenu>
           </Menu>
         </Col>

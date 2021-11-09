@@ -1,0 +1,10 @@
+.user-pannel-wrapper{
+    font-size: 29px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    align-items: center
+}
+.user-pannel-wrapper:hover{
+    cursor:pointer;
+}
