@@ -1,11 +1,10 @@
-import { Menu, Row, Col } from "antd";
+import { Menu } from "antd";
+//import { Menu } from "../../UI/Menu/Menu"; KAK?
 import "antd/dist/antd.css";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
-const { SubMenu } = Menu;
+import { Col } from "../../UI/Grid/Col/Col";
+import { Row } from "../../UI/Grid/Row/Row";
+
+const { SubMenu } = Menu; // KAK?
 
 const MenuList: React.FC = () => {
   const handleClick = () => {

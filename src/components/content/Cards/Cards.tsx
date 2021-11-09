@@ -1,11 +1,10 @@
-import { Row, Col, Card } from "antd";
 import "antd/dist/antd.css";
-import Meta from "antd/lib/card/Meta";
-import {
-  ShoppingOutlined,
-  LineOutlined,
-  PlusOutlined,
-} from "@ant-design/icons";
+import Meta from "antd/lib/card/Meta"; // Kak?
+import { Row } from "../../UI/Grid/Row/Row";
+import { Col } from "../../UI/Grid/Col/Col";
+import { Card } from "../../UI/Card/Card";
+import { PlusOutlined } from "../../UI/Icons/PlusOutlined";
+import { ShoppingOutlined } from "../../UI/Icons/ShoppingOutlined";
 
 const ListCards: React.FC = () => {
   return (

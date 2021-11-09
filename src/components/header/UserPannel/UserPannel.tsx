@@ -1,11 +1,12 @@
-import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-
 import { Modal } from "../../UI/Modal/Modal";
 import { Button } from "../../UI/Button/Button";
+import { HeartOutlined } from "../../UI/Icons/HeartOutlined";
+import { ShoppingCartOutlined } from "../../UI/Icons/ShoppingCartOutlined";
 
 import "antd/dist/antd.css";
 import "../UserPannel/styles.css";
 import { useState } from "react";
+
 const UserPannel: React.FC = () => {
   //Просто тест для доработки ассинхронного логина/регистрации/
   const [visible, setVisible] = useState(false);
