@@ -7,20 +7,14 @@ import MenuList from "./Menu/Menu";
 import { Row, Col } from "antd";
 const Content: React.FC = () => {
   return (
-    <>
-      <div>
-        <Row>
-          <Col span={3}>
-            <MenuList />
-          </Col>
-          <Col span={18}>
-            <ListCards />
-          </Col>
-        </Row>
-      </div>
-      <StoreParse />
-      <UsersParse />
-    </>
+    <Row>
+      <Col span={3}>
+        <MenuList />
+      </Col>
+      <Col span={18}>
+        <ListCards />
+      </Col>
+    </Row>
   );
 };
 

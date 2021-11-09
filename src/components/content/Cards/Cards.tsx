@@ -9,7 +9,7 @@ import { ShoppingOutlined } from "../../UI/Icons/ShoppingOutlined";
 const ListCards: React.FC = () => {
   return (
     <div>
-      <Row justify="center" gutter={[48, 24]}>
+      <Row gutter={[48, 24]}>
         <Col span={6}>
           <Card
             hoverable
