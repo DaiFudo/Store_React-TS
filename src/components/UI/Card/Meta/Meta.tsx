@@ -7,4 +7,4 @@ import { FC } from "react";
 export const Meta: FC<ColProps> = (props) => {
   return <AntCol {...props} />;
 };
-  */
+ */

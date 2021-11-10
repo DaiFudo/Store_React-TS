@@ -1,11 +1,13 @@
 import React from "react";
 
-import StoreParse from "../../api/store";
+import StoreParse from "../../api/products";
 import UsersParse from "../../api/users";
 import ListCards from "./Cards/Cards";
 import MenuList from "./Menu/Menu";
 import { Row, Col } from "antd";
-const Content: React.FC = () => {
+import { AppstoreOutlined } from "@ant-design/icons";
+
+const Wrapper: React.FC = () => {
   return (
     <Row>
       <Col span={3}>
@@ -18,4 +20,4 @@ const Content: React.FC = () => {
   );
 };
 
-export default Content;
+export default Wrapper;

@@ -4,53 +4,58 @@
          "user":[
             {
                "nicknickname":"Dai_Fudo",
-               "password":111,
-               "id":1,
-               "admin": true
+               "password":"111",
+               "id":"asds1",
+               "admin": true,
+               "banned":false
             },
             {
                "nickname":"Wike",
-               "password":111,
-               "id":2,
-               "admin": true
+               "password":"111",
+               "id":"asd",
+               "admin": true,
+               "banned":false
             },
             {
                "nickname":"test",
-               "password":111,
-               "id":3,
-               "admin": true
+               "password":"111",
+               "id":"3",
+               "admin": true,
+               "banned":false
             },
             {
                "nickname":"test2",
-               "password":111,
-               "id":4,
-               "admin": false
+               "password":"111",
+               "id":"4",
+               "admin": false,
+               "banned":false
             },
             {
                "nickname":"user",
                "password":"user",
-               "id":5,
-               "admin": false
-            }
-         ],
-         "ban":[
-            {
+               "id":"5",
+               "admin": false,
+               "banned":false
+            },{
                "nickname":"AdminPetyx",
                "password":"user",
                "id":5,
-               "admin": false
+               "admin": false,
+               "banned":true
             },
             {
                "nickname":"Lox",
                "password":"user",
                "id":5,
-               "admin": false
+               "admin": false,
+               "banned":true
             },
             {
                "nickname":"ZabanMenya",
                "password":"user",
-               "id":5,
-               "admin": false
+               "id":"5",
+               "admin": false,
+               "banned":true
             }
          ]
       }

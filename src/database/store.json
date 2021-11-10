@@ -6,14 +6,14 @@
                {
                   "Razer":[
                      {
-                        "name":"Mouse Razer Mamba TO",
+                        "name":"Razer Mamba TO",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":1,
                         "price":12,
                         "promotion":false
                      },
                      {
-                        "name":"Mouse Razer DeadAdder Chroma",
+                        "name":"Razer DeadAdder Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":2,
                         "price":12,
@@ -24,7 +24,7 @@
                {
                   "Microsoft":[
                      {
-                        "name":"Mouse Microsoft Standart",
+                        "name":"Microsoft Standart",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":3,
                         "price":12,
@@ -37,7 +37,7 @@
                {
                   "Razer":[
                      {
-                        "name":"Razer BlackWindow Chroma",
+                        "name":"BlackWindow Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":3,
                         "price":12,
@@ -53,7 +53,7 @@
                         "promotion":false
                      },
                      {
-                        "name":"Sinergi Tournament Edition",
+                        "name":"Tournament Edition",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":2,
                         "price":12,
@@ -66,21 +66,21 @@
                {
                   "Razer":[
                      {
-                        "name":"Razer CumShotMax",
+                        "name":"CumShotMax",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":1,
                         "price":12,
                         "promotion":false
                      },
                      {
-                        "name":"Razer Kraken 7.1",
+                        "name":"Kraken 7.1",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":2,
                         "price":12,
                         "promotion":false
                      },
                      {
-                        "name":"Razer Kraken 7.1 Chroma",
+                        "name":"Kraken 7.1 Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                         "id":3,
                         "price":12,
@@ -90,44 +90,49 @@
                }
             ]
          }
-      }
-   ],
-   "components":[
+      },
       {
-         "cpu":[
+         "components":[
             {
-               "intel":[
+               "cpu":[
                   {
-                     "model":"Core I5-7500",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":50
-                  },
-                  {
-                     "model":"Core i5 10400F",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":50
-                  },
-                  {
-                     "model":"Core i7 11700F, BOX",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":55
-                  }
-               ],
-               "amd":[
-                  {
-                     "name":"Ryzen 9 5900X",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":500
-                  },
-                  {
-                     "name":"Ryzen 5 3600",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":139
-                  },
-                  {
-                     "name":"Ryzen 9 Athlon 3000G",
-                     "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                     "price":67
+                     "intel":[
+                        {
+                           "model":"Core I5-7500",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":50,
+                           "promotion":false
+                        },
+                        {
+                           "model":"Core i5 10400F",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":50,
+                           "promotion":false
+                        },
+                        {
+                           "model":"Core i7 11700F, BOX",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":55,
+                           "promotion":false
+                        }
+                     ],
+                     "amd":[
+                        {
+                           "name":"Ryzen 9 5900X",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":500
+                        },
+                        {
+                           "name":"Ryzen 5 3600",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":139
+                        },
+                        {
+                           "name":"Ryzen 9 Athlon 3000G",
+                           "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "price":67
+                        }
+                     ]
                   }
                ]
             }

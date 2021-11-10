@@ -1,13 +1,13 @@
 import React from "react";
 
-import Content from "../components/Content/Content";
+import Content from "../components/Wrapper/Wrapper";
 import Header from "../components/Header/Header";
 
-const Auth: React.FC = () => (
+const Admin: React.FC = () => (
   <>
     <Header />
     <Content />
   </>
 );
 
-export default Auth;
+export default Admin;
