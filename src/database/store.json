@@ -8,14 +8,14 @@
                      {
                         "name":"Razer Mamba TO",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":1,
+                        "id":"1",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Razer DeadAdder Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":2,
+                        "id":"2",
                         "price":12,
                         "promotion":false
                      }
@@ -26,7 +26,7 @@
                      {
                         "name":"Microsoft Standart",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":3,
+                        "id":"3",
                         "price":12,
                         "promotion":false
                      }
@@ -39,7 +39,7 @@
                      {
                         "name":"BlackWindow Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":3,
+                        "id":"3",
                         "price":12,
                         "promotion":false
                      }
@@ -48,14 +48,14 @@
                      {
                         "name":"Acroi Energy",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":1,
+                        "id":"1",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Tournament Edition",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":2,
+                        "id":"2",
                         "price":12,
                         "promotion":false
                      }
@@ -68,21 +68,21 @@
                      {
                         "name":"CumShotMax",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":1,
+                        "id":"1",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Kraken 7.1",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":2,
+                        "id":"2",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Kraken 7.1 Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":3,
+                        "id":"3",
                         "price":12,
                         "promotion":false
                      }

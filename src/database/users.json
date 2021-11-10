@@ -39,14 +39,14 @@
             },{
                "nickname":"AdminPetyx",
                "password":"user",
-               "id":5,
+               "id":"5",
                "admin": false,
                "banned":true
             },
             {
                "nickname":"Lox",
                "password":"user",
-               "id":5,
+               "id":"5",
                "admin": false,
                "banned":true
             },
