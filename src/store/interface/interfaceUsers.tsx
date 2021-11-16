@@ -1,9 +1,9 @@
+/* export type IUsers = Array<IUser>; */
+
 export interface IUser {
-  user: {
-    nickname: string;
-    password: string;
-    id: string;
-    admin: boolean;
-    banned: boolean;
-  };
+  nickname: string;
+  password: string;
+  id: string;
+  admin: boolean;
+  banned: boolean;
 }

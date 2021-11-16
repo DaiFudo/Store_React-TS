@@ -8,14 +8,14 @@
                      {
                         "name":"Razer Mamba TO",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"1",
+                        "id":"1asdxzc",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Razer DeadAdder Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"2",
+                        "id":"2zxc",
                         "price":12,
                         "promotion":false
                      }
@@ -26,7 +26,7 @@
                      {
                         "name":"Microsoft Standart",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"3",
+                        "id":"3zxcsa",
                         "price":12,
                         "promotion":false
                      }
@@ -39,7 +39,7 @@
                      {
                         "name":"BlackWindow Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"3",
+                        "id":"sfd3",
                         "price":12,
                         "promotion":false
                      }
@@ -48,7 +48,7 @@
                      {
                         "name":"Acroi Energy",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"1",
+                        "id":"1sada",
                         "price":12,
                         "promotion":false
                      },
@@ -75,14 +75,14 @@
                      {
                         "name":"Kraken 7.1",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"2",
+                        "id":"2fdh",
                         "price":12,
                         "promotion":false
                      },
                      {
                         "name":"Kraken 7.1 Chroma",
                         "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                        "id":"3",
+                        "id":"3dfhb",
                         "price":12,
                         "promotion":false
                      }
@@ -98,20 +98,23 @@
                   {
                      "intel":[
                         {
-                           "model":"Core I5-7500",
+                           "name":"Core I5-7500",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "id":"1asd",
                            "price":50,
                            "promotion":false
                         },
                         {
-                           "model":"Core i5 10400F",
+                           "name":"Core i5 10400F",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "id":"1vzx",
                            "price":50,
                            "promotion":false
                         },
                         {
-                           "model":"Core i7 11700F, BOX",
+                           "name":"Core i7 11700F, BOX",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
+                           "id":"1zvcx",
                            "price":55,
                            "promotion":false
                         }
@@ -120,17 +123,23 @@
                         {
                            "name":"Ryzen 9 5900X",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                           "price":500
+                           "id":"1av",
+                           "price":500,
+                           "promotion":false
                         },
                         {
                            "name":"Ryzen 5 3600",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                           "price":139
+                           "id":"1vads",
+                           "price":139,
+                           "promotion":false
                         },
                         {
                            "name":"Ryzen 9 Athlon 3000G",
                            "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
-                           "price":67
+                           "id":"1gd",
+                           "price":67,
+                           "promotion":false
                         }
                      ]
                   }

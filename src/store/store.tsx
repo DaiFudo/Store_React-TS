@@ -1,34 +1,26 @@
+import React from "react";
+
 import { makeAutoObservable } from "mobx";
 import { observable } from "mobx";
-
-import {
-  IRazer,
-  IMicrosoft,
-  ISinergi,
-  IAmd,
-  IIntel,
-} from "./interface/interfaceProducts";
+import usersData from "../database/users.json";
+//import { handleUsers } from "../api/users";
+import { IAll, IComponents, IDevice } from "./interface/interfaceProducts";
 
 import { IUser } from "./interface/interfaceUsers";
 import { ICardInfo } from "./interface/interfaceCard";
 
 class Store {
-  IUser?: {};
-  password?: string;
-  nickname?: string;
-  id?: string;
-  admin?: boolean;
-  banned?: boolean;
-
+  users?: IUser;
+  products?: IAll;
   constructor() {
     makeAutoObservable(this);
   }
-  getUser(IUser: IUser) {
-    this.nickname = IUser.user.nickname;
-    this.password = IUser.user.password;
-    this.id = IUser.user.id;
-    this.admin = IUser.user.admin;
-    this.banned = IUser.user.banned;
+
+  setUsers(users: IUser) {
+    this.users = Object.assign({}, users);
+  }
+  setProducts(devices?: IAll) {
+    this.products = Object.assign({}, devices);
   }
 }
 export default new Store();

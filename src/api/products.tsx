@@ -1,15 +1,14 @@
 import React from "react";
 
 import { observer } from "mobx-react-lite";
+import { toJS } from "mobx";
 
-import ProductsData from "../database/store.json";
+import productsData from "../database/store.json";
 
-const ProductsParse: React.FC = observer(() => {
-  function fetchProducts() {
-    return Promise.resolve(ProductsData);
-  }
-  fetchProducts().then((res) => console.log(res));
+import Store from "../store/store";
+import { IAll } from "../store/interface/interfaceProducts";
 
-  return <></>;
-});
-export default ProductsParse;
+export const handleProduct = () => {
+  const ProductsData = JSON.parse(JSON.stringify(productsData));
+  Store.setProducts(ProductsData.products); //! ANY!!
+};

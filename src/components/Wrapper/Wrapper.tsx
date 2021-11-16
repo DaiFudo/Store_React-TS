@@ -1,7 +1,5 @@
 import React from "react";
 
-import StoreParse from "../../api/products";
-import UsersParse from "../../api/users";
 import ListCards from "./Cards/Cards";
 import MenuList from "./Menu/Menu";
 import { Row, Col } from "antd";

@@ -5,6 +5,10 @@ import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import Admin from "../views/Admin";
 import Profile from "../views/Profile";
 import Main from "../views/Main";
+import { handleUsers } from "../api/users";
+import { handleProduct } from "../api/products";
+handleUsers();
+handleProduct();
 
 const App: React.FC = () => (
   <div>
