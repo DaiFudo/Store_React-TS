@@ -1,6 +1,6 @@
 {
-   "products":[
-      {
+   "products":{
+      
          "devices":{
             "mouses":[
                {
@@ -89,12 +89,12 @@
                   ]
                }
             ]
-         }
-      },
-      {
-         "components":[
-            {
-               "cpu":[
+         },
+      
+      
+         "components":{
+            
+               "cpu":
                   {
                      "intel":[
                         {
@@ -143,9 +143,9 @@
                         }
                      ]
                   }
-               ]
-            }
-         ]
+               
+            
+         }
+      
       }
-   ]
 }

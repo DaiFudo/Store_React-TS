@@ -7,6 +7,7 @@ import Profile from "../views/Profile";
 import Main from "../views/Main";
 import { handleUsers } from "../api/users";
 import { handleProduct } from "../api/products";
+
 handleUsers();
 handleProduct();
 

@@ -1,13 +1,13 @@
 import { Modal } from "../../UI/Modal/Modal";
-import { Button } from "../../UI/Button/Button";
 import { HeartOutlined } from "../../UI/Icons/HeartOutlined";
 import { ShoppingCartOutlined } from "../../UI/Icons/ShoppingCartOutlined";
 
 import "antd/dist/antd.css";
 import "../UserPannel/styles.css";
 import { useState } from "react";
-import { Checkbox, Form, Input } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Button } from "../../UI/Button/Button";
+import ModalForms from "./Form/Form";
+
 const UserPannel: React.FC = () => {
   //Просто тест для доработки ассинхронного логина/регистрации/
   const [visible, setVisible] = useState(false);
@@ -30,7 +30,7 @@ const UserPannel: React.FC = () => {
         <ShoppingCartOutlined />
       </div>
       <Button type="primary" onClick={showModal}>
-        Open Modal with async logic
+        Login/Reg
       </Button>
       <Modal
         title="Auth"
@@ -39,63 +39,7 @@ const UserPannel: React.FC = () => {
         onCancel={handleCancel}
         footer={null}
       >
-        <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{
-            remember: true,
-          }}
-        >
-          <Form.Item
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Username!",
-              },
-            ]}
-          >
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Password!",
-              },
-            ]}
-          >
-            <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <a className="login-form-forgot" href="">
-              Forgot password
-            </a>
-          </Form.Item>
-
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button"
-            >
-              Log in
-            </Button>
-            Or <a href="">register now!</a>
-          </Form.Item>
-        </Form>
+        <ModalForms />
       </Modal>
     </div>
   );

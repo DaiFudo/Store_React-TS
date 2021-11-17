@@ -8,35 +8,29 @@ import { ShoppingOutlined } from "../../UI/Icons/ShoppingOutlined";
 import { toJS } from "mobx";
 import Store from "../../../store/store";
 import { observer } from "mobx-react-lite";
+import { ICardInfo } from "../../../store/interface/interfaceCard";
+import { IUser } from "../../../store/interface/interfaceUsers";
 
 const ListCards: React.FC = observer(() => {
+  const cards = JSON.parse(JSON.stringify(toJS(Store)));
+  const b = cards.products.devices;
+  console.log("test", b);
   const renderListCards = () => {
-    const cards = toJS(Store);
-    console.log(cards);
-    console.log(1, Store.products);
+    return Store.products!.map((categories) => {
+      return <></>;
+    });
 
-    return (
-      <Col span={6}>
-        <Card
-          hoverable
-          style={{ width: 300 }}
-          cover={
-            <img
-              alt="example"
-              src="https://static.razer.ru/165191/800x600mamba-elite-promo.png"
-            />
-          }
-          actions={[
-            <PlusOutlined key="like" />,
-            <ShoppingOutlined key="basket" />,
-          ]}
-        >
-          <Meta title="Razer Mamba TO" description="Best for you" />
-        </Card>
-      </Col>
-    );
+    /*  Store.users!.find((item: any) => {
+      if (item.nickname === "Dai_Fudo") {
+        return console.log("hi");
+      } else {
+        return console.log("so bad", item);
+      }
+    });
+    const a = Store.users!.map((item: any) => toJS(item.user));
+    console.log(toJS(a));
+// можно просто мапить,  а если в консоль обернуть tojs */
   };
-  renderListCards();
 
   return (
     <div>

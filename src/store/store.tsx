@@ -10,17 +10,17 @@ import { IUser } from "./interface/interfaceUsers";
 import { ICardInfo } from "./interface/interfaceCard";
 
 class Store {
-  users?: IUser;
-  products?: IAll;
+  users?: IUser[];
+  products?: IAll[];
   constructor() {
     makeAutoObservable(this);
   }
 
-  setUsers(users: IUser) {
-    this.users = Object.assign({}, users);
+  setUsers(users: IUser[]) {
+    this.users = users;
   }
-  setProducts(devices?: IAll) {
-    this.products = Object.assign({}, devices);
+  setProducts(devices?: IAll[]) {
+    this.products = devices;
   }
 }
 export default new Store();
