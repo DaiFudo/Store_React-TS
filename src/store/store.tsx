@@ -11,7 +11,7 @@ import { ICardInfo } from "./interface/interfaceCard";
 
 class Store {
   users?: IUser[];
-  products?: IAll[];
+  products?: any;
   constructor() {
     makeAutoObservable(this);
   }

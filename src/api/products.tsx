@@ -10,5 +10,5 @@ export const handleProduct = () => {
   const ProductsData: IAll[] = JSON.parse(
     JSON.stringify(productsData.products)
   );
-  Store.setProducts(ProductsData); //! ANY!!
+  Store.setProducts(ProductsData);
 };
