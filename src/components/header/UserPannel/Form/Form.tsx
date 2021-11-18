@@ -4,6 +4,7 @@ import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Button } from "../../../UI/Button/Button";
 const ModalForms: React.FC = () => {
+  const FormLogic = () => {};
   return (
     <Form
       name="normal_login"

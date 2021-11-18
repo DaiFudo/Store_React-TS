@@ -9,13 +9,14 @@ import { ICardInfo } from "../../../store/interface/interfaceCard";
 import { IUser } from "../../../store/interface/interfaceUsers";
 import renderListCards from "./filterCards/filterCards";
 
-const ListCards: React.FC = observer(() => {
+const ListCards = (selectMenuItem: any) => {
   // можно просто мапить,  а если в консоль обернуть tojs */
+  console.log(selectMenuItem);
 
   return (
     <div>
-      <Row gutter={[48, 24]}>{renderListCards()}</Row>
+      <Row gutter={[48, 24]}>{renderListCards(selectMenuItem)}</Row>
     </div>
   );
-});
+};
 export default ListCards;

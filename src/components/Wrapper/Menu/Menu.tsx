@@ -6,40 +6,36 @@ import { Row } from "../../UI/Grid/Row/Row";
 
 import { toJS } from "mobx";
 import Store from "../../../store/store";
+import renderListCards from "../Cards/filterCards/filterCards";
 
 const { SubMenu } = Menu; // KAK?
 
-const MenuList: React.FC = () => {
-  const handleClick = () => {
-    console.log(1, "handleClick", handleClick);
-  };
+interface MenuList {
+  setSelectMenuItem: React.Dispatch<React.SetStateAction<string>>;
+}
 
-  const Test = () => {
-    return Store.products.map((item: any) => {
-      return (
-        <SubMenu key="s1" title={item}>
-          <SubMenu key="g1" title={item.devices}></SubMenu>
-        </SubMenu>
-      );
-    });
-  };
+const MenuList: React.FC<MenuList> = (props) => {
+  // console.log(11, toJS(Store.products?.map((item: any) => item)));
+
+  const categories = Object.keys(Store.products!);
+
   return (
     <Row justify="start">
       <Col>
         <Menu
-          onClick={() => handleClick}
+          onClick={(e) => props.setSelectMenuItem(e.key)}
           style={{ width: 230 }}
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          {Test}
-          <SubMenu key="su123b1" title="Devices">
-            <SubMenu key="g112323122" title="Mouses"></SubMenu>
-            <SubMenu key="g212saad312" title="Keyboards"></SubMenu>
+          <SubMenu key="devices" title="Devices">
+            <Menu.Item key="mouses">Mouses</Menu.Item>
+            <Menu.Item key="keyboards">Keyboards</Menu.Item>
+            <Menu.Item key="headphones">Headphones</Menu.Item>
           </SubMenu>
-          <SubMenu key="subsad2123" title="Components">
-            <SubMenu key="g21as2312" title="CPU"></SubMenu>
+          <SubMenu key="Components" title="Components">
+            <Menu.Item key="CPU">CPU</Menu.Item>
           </SubMenu>
         </Menu>
       </Col>
