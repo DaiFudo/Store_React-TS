@@ -5,8 +5,6 @@ import { Col } from "../../UI/Grid/Col/Col";
 import { Row } from "../../UI/Grid/Row/Row";
 
 import { toJS } from "mobx";
-import Store from "../../../store/store";
-import renderListCards from "../Cards/filterCards/filterCards";
 
 const { SubMenu } = Menu; // KAK?
 
@@ -15,10 +13,6 @@ interface MenuList {
 }
 
 const MenuList: React.FC<MenuList> = (props) => {
-  // console.log(11, toJS(Store.products?.map((item: any) => item)));
-
-  const categories = Object.keys(Store.products!);
-
   return (
     <Row justify="start">
       <Col>
@@ -35,7 +29,7 @@ const MenuList: React.FC<MenuList> = (props) => {
             <Menu.Item key="headphones">Headphones</Menu.Item>
           </SubMenu>
           <SubMenu key="Components" title="Components">
-            <Menu.Item key="CPU">CPU</Menu.Item>
+            <Menu.Item key="cpu">CPU</Menu.Item>
           </SubMenu>
         </Menu>
       </Col>

@@ -2,9 +2,20 @@ import React from "react";
 
 import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { Button } from "../../../UI/Button/Button";
-const ModalForms: React.FC = () => {
-  const FormLogic = () => {};
+import { Button } from "../../../../UI/Button/Button";
+import { toJS } from "mobx";
+import Store from "../../../../../store/store";
+
+const ModalForm: React.FC = () => {
+  const login = (e: any) => {
+    console.log("hi Login");
+    console.log(toJS(Store.users), e.target);
+  };
+  const registration = (e: any) => {
+    console.log("hi registration");
+    console.log(toJS(Store.users), e.target);
+  };
+
   return (
     <Form
       name="normal_login"
@@ -18,7 +29,7 @@ const ModalForms: React.FC = () => {
         rules={[
           {
             required: true,
-            message: "Please input your Username!",
+            message: "Please input your Nickname!",
           },
         ]}
       >
@@ -43,12 +54,25 @@ const ModalForms: React.FC = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+          onClick={(e) => login(e)}
+        >
+          Login
         </Button>
-        Or <a href="">register now!</a>
+        Or
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="registration-form-button"
+          onClick={(e) => registration(e)}
+        >
+          Registration
+        </Button>
       </Form.Item>
     </Form>
   );
 };
-export default ModalForms;
+export default ModalForm;

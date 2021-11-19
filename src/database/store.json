@@ -6,14 +6,14 @@
                "name":"Razer Mamba TO",
                "img":"https://static.razer.ru/231521/800x600-razer-viper-ultimate-quartz-and-charging-dock-product-promo.png",
                "id":"1asdxzc",
-               "price":12,
+               "price":152,
                "promotion":false
             },
             {
                "name":"Razer DeadAdder Chroma",
                "img":"https://static.razer.ru/229005/800x600-razer-viper-ultimate-and-charging-dock-product-promo.png",
                "id":"2zxac",
-               "price":122,
+               "price":172,
                "promotion":false
             },
             {
@@ -50,14 +50,14 @@
                "name":"Razer Acroi Energy",
                "img":"https://static.razer.ru/230435/800x600-razer-pro-type-product-promo.png",
                "id":"1sada",
-               "price":12,
+               "price":125,
                "promotion":false
             },
             {
                "name":"Razer Tournament Edition",
                "img":"https://static.razer.ru/237599/800x600-razer-blackwidow-v3-mini-hyperspeed-phantom-edition-product-promo.png",
                "id":"2",
-               "price":12,
+               "price":132,
                "promotion":false
             }
          ],
@@ -66,7 +66,7 @@
                "name":"Razer HotMax",
                "img":"https://static.razer.ru/237696/800x600-razer-blackshark-v2-pro-white-product-promo.png",
                "id":"1",
-               "price":12,
+               "price":142,
                "promotion":false
             },
             {
@@ -84,26 +84,26 @@
                "promotion":false
             }
          ],
-         "CPU":[
+         "cpu":[
             {
                "name":"Intel Core I5-7500",
                "img":"https://cdn1.ozone.ru/multimedia/wc1200/1030523244.jpg",
                "id":"1asd",
-               "price":50,
+               "price":110,
                "promotion":false
             },
             {
                "name":"Intel Core i5 10400F",
                "img":"https://cdn1.ozone.ru/s3/multimedia-4/wc1200/6059587636.jpg",
                "id":"1vzx",
-               "price":50,
+               "price":340,
                "promotion":false
             },
             {
                "name":"Intel Core i7 11700F, BOX",
                "img":"https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6100103028.jpg",
                "id":"1zvcx",
-               "price":55,
+               "price":155,
                "promotion":false
             },
             {

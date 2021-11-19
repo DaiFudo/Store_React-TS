@@ -2,56 +2,88 @@
    {
       "nickname":"Dai_Fudo",
       "password":"111",
+      "money":6666666,
       "id":"asds1",
+      "liked": "1asdxzc",
+      "shoping": "sfd3",
+      "buying": "",
       "admin":true,
       "banned":false
    },
    {
       "nickname":"Wike",
       "password":"111",
+      "money":6666666,
       "id":"asd",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":true,
       "banned":false
    },
    {
       "nickname":"test",
       "password":"111",
+      "money":5000,
       "id":"3",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":true,
       "banned":false
    },
    {
       "nickname":"test2",
       "password":"111",
+      "money":5000,
       "id":"4",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":false,
       "banned":false
    },
    {
       "nickname":"user",
       "password":"user",
+      "money":5000,
       "id":"5",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":false,
       "banned":false
    },
    {
       "nickname":"AdminPetyx",
       "password":"user",
+      "money":0,
       "id":"5",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":false,
       "banned":true
    },
    {
       "nickname":"Lox",
       "password":"user",
+      "money":0,
       "id":"5",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":false,
       "banned":true
    },
    {
       "nickname":"ZabanMenya",
       "password":"user",
+      "money":0,
       "id":"5",
+      "liked": "",
+      "shoping": "",
+      "buying": "",
       "admin":false,
       "banned":true
    }
