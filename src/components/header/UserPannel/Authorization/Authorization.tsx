@@ -16,11 +16,29 @@ const Authorization = () => {
     setVisible(false);
   };
 
-  return (
-    <div>
+  const logOut = () => {
+    localStorage.removeItem("nickname");
+    localStorage.removeItem("password");
+  };
+
+  const regOn = () => {
+    return (
+      <Button type="primary" onClick={logOut}>
+        Exit
+      </Button>
+    );
+  };
+  const regOff = () => {
+    return (
       <Button type="primary" onClick={showModal}>
         Log/Reg
       </Button>
+    );
+  };
+
+  return (
+    <div>
+      {localStorage.getItem("nickname") ? regOn() : regOff()}
       <Modal
         title="Auth"
         visible={visible}

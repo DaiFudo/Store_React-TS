@@ -17,11 +17,11 @@ const App: React.FC = () => (
   <div>
     <Router>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/auth" element={<Admin />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/store" element={<Main />} />
+        <Route path="/store/admin" element={<Admin />} />
+        <Route path="/store/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/banned" element={<Banned />} />
+        <Route path="/store/banned" element={<Banned />} />
       </Routes>
     </Router>
   </div>

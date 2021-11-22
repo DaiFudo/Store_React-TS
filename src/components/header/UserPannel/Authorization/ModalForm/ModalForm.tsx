@@ -6,26 +6,53 @@ import { Button } from "../../../../UI/Button/Button";
 import { toJS } from "mobx";
 import Store from "../../../../../store/store";
 
+import { IUser } from "../../../../../store/interface/interfaceUsers";
+
 const ModalForm: React.FC = () => {
-  const login = (e: any) => {
-    console.log("hi Login");
-    console.log(toJS(Store.users), e.target);
+  const onFinish = (values: IUser) => {
+    console.log("Success:", values.nickname, toJS(Store.users));
+    console.log("wtf?", toJS(Store.users!.map((item: IUser) => item.nickname)));
+
+    const nameFromInput = values.nickname;
+    const passFromInput = values.password;
+    const nick = Store.users!.find(
+      (item: IUser) => item.nickname === nameFromInput
+    );
+    const pass = Store.users!.find(
+      (item: IUser) => item.password === passFromInput
+    );
+
+    console.log(1123123, toJS(pass));
+    if (nick && pass) {
+      localStorage.setItem("nickname", nameFromInput);
+      localStorage.setItem("password", passFromInput);
+    } else {
+      alert("Введите верный логин и пароль.");
+    }
+    /* if (nameFromInput === nick2) {
+      console.log("true", values.nickname);
+      // && values.password
+    } else {
+      console.log("fuck ya", values.nickname, nameFromInput, nick);
+    } */
   };
-  const registration = (e: any) => {
-    console.log("hi registration");
-    console.log(toJS(Store.users), e.target);
+  const onFinishFailed = (errorInfo: any) => {
+    // ANY
+    console.log("Failed:", errorInfo);
   };
 
   return (
     <Form
       name="normal_login"
       className="login-form"
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
       initialValues={{
         remember: true,
       }}
     >
       <Form.Item
-        name="username"
+        name="nickname"
         rules={[
           {
             required: true,
@@ -35,7 +62,7 @@ const ModalForm: React.FC = () => {
       >
         <Input
           prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Username"
+          placeholder="nickname"
         />
       </Form.Item>
       <Form.Item
@@ -54,12 +81,7 @@ const ModalForm: React.FC = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button
-          type="primary"
-          htmlType="submit"
-          className="login-form-button"
-          onClick={(e) => login(e)}
-        >
+        <Button type="primary" htmlType="submit" className="login-form-button">
           Login
         </Button>
         Or
@@ -67,7 +89,6 @@ const ModalForm: React.FC = () => {
           type="primary"
           htmlType="submit"
           className="registration-form-button"
-          onClick={(e) => registration(e)}
         >
           Registration
         </Button>

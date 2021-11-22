@@ -1,34 +1,39 @@
 import Store from "../../../../store/store";
+
 import { Col } from "../../../UI/Grid/Col/Col";
 import { Card } from "../../../UI/Card/Card";
 import Meta from "antd/lib/card/Meta";
 import { PlusOutlined } from "../../../UI/Icons/PlusOutlined";
 import { ShoppingOutlined } from "../../../UI/Icons/ShoppingOutlined";
-import { toJS } from "mobx";
 import { Button, Image, message } from "antd";
 import "antd/dist/antd.css";
 
+import { ICardInfo } from "../../../../store/interface/interfaceCard";
+
 const renderListCards = ({ selectMenuItem }: any) => {
-  const filterCards = Object.entries(Store.products.devices).find(
-    (item: any) => {
-      if (item[0] === selectMenuItem) {
-        return true;
-      }
-    }
-  );
+  // ANY
+  const filterCards = Store.products.devices[selectMenuItem];
 
   const likeItem = (item: any) => {
-    console.log("say hi likeItem", item.id);
-    message.success(`Liked: ${item.name}`); // success, error, warning
+    // ANY
+    console.log(1, localStorage);
+
+    if (item.id != localStorage) {
+      return localStorage.setItem(`Liked:${item.name}`, item.id);
+    } else if (item.id) {
+      return localStorage.removeItem(item.name);
+    }
   };
-  const buyingItem = (item: any) => {
+
+  const buyingItem = (item: ICardInfo) => {
     console.log("say hi buyingItem", item.id);
     message.success(`Added: ${item.name}`);
   };
 
-  return (filterCards![1] as []).map((item: any) => {
+  return filterCards!.map((item: ICardInfo) => {
+    // ANY
     let sales = 1;
-    const price = `${sales * item.price}$`; // для распродаж
+    const price = `${sales * item.price!}$`; // для распродаж
     return (
       <Col key={item.id} span={6}>
         <Card

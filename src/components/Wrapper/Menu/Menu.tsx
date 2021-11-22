@@ -4,8 +4,6 @@ import "antd/dist/antd.css";
 import { Col } from "../../UI/Grid/Col/Col";
 import { Row } from "../../UI/Grid/Row/Row";
 
-import { toJS } from "mobx";
-
 const { SubMenu } = Menu; // KAK?
 
 interface MenuList {

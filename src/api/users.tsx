@@ -1,7 +1,3 @@
-import React from "react";
-
-import { observer } from "mobx-react-lite";
-import { toJS } from "mobx";
 import { IUser } from "../store/interface/interfaceUsers";
 import usersData from "../database/users.json";
 
@@ -28,4 +24,5 @@ export const handleUsers = async () => {
   } else {
     throw new Error("suck");
   } */
+  //Как так, не работает вовсе. :<
 };

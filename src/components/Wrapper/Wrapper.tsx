@@ -6,6 +6,7 @@ import { Row, Col } from "antd";
 
 const Wrapper: React.FC = () => {
   const [selectMenuItem, setSelectMenuItem] = useState("cpu");
+
   return (
     <Row>
       <Col span={3}>

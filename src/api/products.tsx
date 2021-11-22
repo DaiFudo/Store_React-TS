@@ -1,6 +1,3 @@
-import React from "react";
-import { toJS } from "mobx";
-
 import productsData from "../database/store.json";
 
 import Store from "../store/store";
