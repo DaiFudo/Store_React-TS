@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "../components/UI/Button/Button";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const NotFound = () => {
+  let navigate = useNavigate();
   const location = useLocation();
+
+  const home = () => {
+    navigate("/store");
+  };
+
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -16,9 +23,8 @@ const NotFound = () => {
       />
       <span>Page "{location.pathname}" not Found...</span>
       <span>But see this gif is amazing!</span>
-      <Link to="/">
-        <Button>Get Back</Button>
-      </Link>
+
+      <Button onClick={home}>Get Back</Button>
     </div>
   );
 };
