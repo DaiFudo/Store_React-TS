@@ -4,7 +4,7 @@ import ListCards from "./Cards/Cards";
 import MenuList from "./Menu/Menu";
 import { Row, Col } from "antd";
 
-const Wrapper: React.FC = () => {
+const StoreAllItems: React.FC = () => {
   const [selectMenuItem, setSelectMenuItem] = useState("cpu");
 
   return (
@@ -19,4 +19,4 @@ const Wrapper: React.FC = () => {
   );
 };
 
-export default Wrapper;
+export default StoreAllItems;

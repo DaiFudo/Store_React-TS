@@ -1,12 +1,12 @@
 import React from "react";
 
-import Content from "../components/Wrapper/Wrapper";
 import Header from "../components/Header/Header";
+import StoreAllItems from "../components/Wrapper/StoreAllItems";
 
 const Admin: React.FC = () => (
   <>
     <Header />
-    <Content />
+    <StoreAllItems />
   </>
 );
 

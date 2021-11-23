@@ -1,6 +1,6 @@
 import React from "react";
 
-import Content from "../components/Wrapper/Wrapper";
+import StoreAllItems from "../components/Wrapper/StoreAllItems";
 import Header from "../components/Header/Header";
 
 import { toJS } from "mobx";
@@ -11,7 +11,7 @@ const Main: React.FC = () => {
   return (
     <>
       <Header />
-      <Content />
+      <StoreAllItems />
     </>
   );
 };

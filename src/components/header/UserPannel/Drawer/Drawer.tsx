@@ -1,15 +1,21 @@
 import { useState } from "react";
 //import Store from "../../../../store/store";
 
+import { useNavigate } from "react-router-dom";
+
 import { Drawer } from "antd";
 import { Button } from "../../../UI/Button/Button";
 import { HeartOutlined } from "../../../UI/Icons/HeartOutlined";
 import { ShoppingCartOutlined } from "../../../UI/Icons/ShoppingCartOutlined";
 import { toJS } from "mobx";
+import { profile } from "console";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);
   const [visibles, setVisiblesShopping] = useState(false);
+
+  let navigate = useNavigate();
+
   const showDrawerLikes = () => {
     setVisibleLikes(true);
   };
@@ -44,7 +50,9 @@ const Drawler = () => {
     const sectionItem = "Basket";
     return test(nameLength, sliceOption, sectionItem);
   };
-
+  const profile = () => {
+    navigate("/profile");
+  };
   return (
     <div className="user-pannel-icons">
       <Button onClick={showDrawerLikes}>
@@ -70,7 +78,9 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button type="primary">Buying!</Button>
+        <Button onClick={profile} type="primary">
+          Buying!
+        </Button>
         {shoppedItems()}
       </Drawer>
     </div>

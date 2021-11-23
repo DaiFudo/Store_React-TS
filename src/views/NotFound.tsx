@@ -9,7 +9,7 @@ const NotFound = () => {
   const location = useLocation();
 
   const home = () => {
-    navigate("/store");
+    navigate("/");
   };
 
   return (
