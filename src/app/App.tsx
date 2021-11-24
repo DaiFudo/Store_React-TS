@@ -1,12 +1,7 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import {
-  Routes,
-  BrowserRouter as Router,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import Admin from "../views/Admin";
 import Profile from "../views/Profile";
 import Main from "../views/Main";
@@ -26,7 +21,6 @@ const App: React.FC = () => {
       <CSSTransition classNames="fade" timeout={300}>
         <Router>
           <Routes>
-            a
             <Route path="/" element={<Main />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/profile" element={<Profile />} />

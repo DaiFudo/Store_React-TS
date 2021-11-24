@@ -1,18 +1,18 @@
 import React from "react";
+import { toJS } from "mobx";
+
+import Store from "../../../../../store/store";
+import { useNavigate } from "react-router-dom";
 
 import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Button } from "../../../../UI/Button/Button";
-import { toJS } from "mobx";
-import Store from "../../../../../store/store";
-
 import { IUser } from "../../../../../store/interface/interfaceUsers";
 
 const ModalForm: React.FC = () => {
-  const onFinish = (values: IUser) => {
-    console.log("Success:", values.nickname, toJS(Store.users));
-    console.log("wtf?", toJS(Store.users!.map((item: IUser) => item.nickname)));
+  let navigate = useNavigate();
 
+  const onFinish = (values: IUser) => {
     const nameFromInput = values.nickname;
     const passFromInput = values.password;
     const nick = Store.users!.find(
@@ -22,19 +22,14 @@ const ModalForm: React.FC = () => {
       (item: IUser) => item.password === passFromInput
     );
 
-    console.log(1123123, toJS(pass));
     if (nick && pass) {
       localStorage.setItem("nickname", nameFromInput);
       localStorage.setItem("password", passFromInput);
+
+      navigate("/profile");
     } else {
       alert("Введите верный логин и пароль.");
     }
-    /* if (nameFromInput === nick2) {
-      console.log("true", values.nickname);
-      // && values.password
-    } else {
-      console.log("fuck ya", values.nickname, nameFromInput, nick);
-    } */
   };
   const onFinishFailed = (errorInfo: any) => {
     // ANY

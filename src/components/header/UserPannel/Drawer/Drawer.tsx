@@ -26,7 +26,7 @@ const Drawler = () => {
     setVisibleLikes(false);
     setVisiblesShopping(false);
   };
-  const test = (
+  const addetItemsUser = (
     nameLength: number,
     sliceOption: number,
     sectionItem: string
@@ -42,13 +42,13 @@ const Drawler = () => {
     const nameLength = 5;
     const sliceOption = 6;
     const sectionItem = "Liked";
-    return test(nameLength, sliceOption, sectionItem);
+    return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
   const shoppedItems = () => {
     const nameLength = 6;
     const sliceOption = 7;
     const sectionItem = "Basket";
-    return test(nameLength, sliceOption, sectionItem);
+    return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
   const profile = () => {
     navigate("/profile");

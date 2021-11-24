@@ -3,7 +3,8 @@
 export interface IUser {
   nickname: string;
   password: string;
-  id: string;
-  admin: boolean;
-  banned: boolean;
+  money?: number;
+  id?: string;
+  admin?: boolean;
+  banned?: boolean;
 }

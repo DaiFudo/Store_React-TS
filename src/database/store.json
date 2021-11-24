@@ -7,28 +7,28 @@
                "img":"https://static.razer.ru/231521/800x600-razer-viper-ultimate-quartz-and-charging-dock-product-promo.png",
                "id":"1asdxzc",
                "price":152,
-               "promotion":false
+               "promotion":111
             },
             {
                "name":"Razer DeadAdder Chroma",
                "img":"https://static.razer.ru/229005/800x600-razer-viper-ultimate-and-charging-dock-product-promo.png",
                "id":"2zxac",
                "price":172,
-               "promotion":false
+               "promotion":172
             },
             {
                "name":"Razer Mamba Wireless",
                "img":"https://static.razer.ru/230753/800x600-razer-deathadder-v2-pro-product-promo.png",
                "id":"212zxc",
                "price":112,
-               "promotion":false
+               "promotion":100
             },
             {
                "name":"Razer Basilisk X HyperSpeed",
                "img":"https://static.razer.ru/135621/800x600mamba-wireless-promo.png",
                "id":"2zxsc",
                "price":125,
-               "promotion":false
+               "promotion":64
             },
             {
                "name":"Razer DeathAdder V2 Pro",

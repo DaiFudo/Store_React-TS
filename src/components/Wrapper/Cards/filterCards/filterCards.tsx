@@ -26,34 +26,31 @@ const renderListCards = ({ selectMenuItem }: any) => {
   let warn = () => {
     message.error(`Please log in or registration`);
   };
-  const likeItem = (item: ICardInfo) => {
+
+  const StatusItemChanger = (item: ICardInfo, add: string, deleted: string) => {
     if (accountVefinedNickname && accountVefinedPassword) {
-      let itemInLocalStorage = localStorage.getItem(`Liked:${item.name}`);
+      let itemInLocalStorage = localStorage.getItem(`${add}:${item.name}`);
       if (itemInLocalStorage != item.id) {
-        message.success(`Liked: ${item.name}`);
-        return localStorage.setItem(`Liked:${item.name}`, item.id!);
+        message.success(`${add}: ${item.name}`);
+        return localStorage.setItem(`${add}:${item.name}`, item.id!);
       } else if (itemInLocalStorage === item.id) {
-        message.warning(`Unliked: ${item.name}`);
-        return localStorage.removeItem(`Liked:${item.name}`);
+        message.warning(`${deleted}: ${item.name}`);
+        return localStorage.removeItem(`${add}:${item.name}`);
       }
     } else {
       warn();
       return;
     }
   };
+  const likeItem = (item: ICardInfo) => {
+    const add = "Liked";
+    const deleted = "Unliked";
+    StatusItemChanger(item, add, deleted);
+  };
   const buyingItem = (item: ICardInfo) => {
-    if (accountVefinedNickname && accountVefinedPassword) {
-      let itemInLocalStorage = localStorage.getItem(`Basket:${item.name}`);
-      if (itemInLocalStorage != item.id) {
-        message.success(`Basket: ${item.name}`);
-        return localStorage.setItem(`Basket:${item.name}`, item.id!);
-      } else if (itemInLocalStorage === item.id) {
-        message.warning(`Delete from you basket: ${item.name}`);
-        return localStorage.removeItem(`Basket:${item.name}`);
-      }
-    } else {
-      warn();
-    }
+    const add = "Basket";
+    const deleted = "Delete from you basket";
+    StatusItemChanger(item, add, deleted);
   };
 
   return filterCards!.map((item: ICardInfo) => {
