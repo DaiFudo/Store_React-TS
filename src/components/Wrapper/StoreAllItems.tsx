@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Col } from "../UI/Grid/Col/Col";
+import { Row } from "../UI/Grid/Row/Row";
 
 import ListCards from "./Cards/Cards";
-import MenuList from "./Menu/Menu";
-import { Row, Col } from "antd";
+import MenuListForStore from "./Menu/MenuInStore";
 
 const StoreAllItems: React.FC = () => {
   const [selectMenuItem, setSelectMenuItem] = useState("cpu");
@@ -10,7 +11,7 @@ const StoreAllItems: React.FC = () => {
   return (
     <Row>
       <Col span={3}>
-        <MenuList setSelectMenuItem={setSelectMenuItem} />
+        <MenuListForStore setSelectMenuItem={setSelectMenuItem} />
       </Col>
       <Col span={18}>
         <ListCards selectMenuItem={selectMenuItem} />

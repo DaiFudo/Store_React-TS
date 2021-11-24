@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 
-import ListCards from "./Cards/Cards";
-import MenuList from "./Menu/Menu";
-import { Row, Col, List, Typography, Divider } from "antd";
+import addetItemsUser from "../../app/utils/addetItemsUser";
+import { Col } from "../UI/Grid/Col/Col";
+import { Row } from "../UI/Grid/Row/Row";
+import MenuListForProfile from "./Menu/MenuInProfile";
+
 const StoreAllItems: React.FC = () => {
   let navigate = useNavigate();
   const chekerLogin = () => {
@@ -13,20 +14,6 @@ const StoreAllItems: React.FC = () => {
     }
   };
   chekerLogin();
-
-  const addetItemsUser = (
-    nameLength: number,
-    sliceOption: number,
-    sectionItem: string
-  ) => {
-    const items: any = { ...localStorage };
-    const likedItems = Object.keys(items).filter((key) => {
-      return key.slice(0, nameLength) === sectionItem;
-    });
-    const a = likedItems.map((key) => key.slice(sliceOption));
-
-    return a.map((item, index) => <div key={index}>{item}</div>);
-  };
 
   const likedsItems = () => {
     const nameLength = 5;
@@ -40,33 +27,23 @@ const StoreAllItems: React.FC = () => {
     const sectionItem = "Basket";
     return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
+  console.log("is a likedsItems", likedsItems());
 
-  const items: any = { ...localStorage };
-  const likedItems = Object.keys(items).filter((key) => {
-    return key.slice(0, 5) === "Liked";
-  });
-  const usersLike = likedItems.map((key) => key.slice(6));
-  const [selectMenuItem, setSelectMenuItem] = useState("cpu");
+  //const items: any = { ...localStorage };
+  //const likedItems = Object.keys(items).filter((key) => {
+  //  return key.slice(0, 5) === "Liked";
+  //});
+  //const usersLike = likedItems.map((key) => key.slice(6));
+  // Официально поздравляю Илья Игоревич, вы создали первый кусок кода который
+  // почему-то не используется, но приложение работает.
+  const [selectMenuItem, setSelectMenuItem] = useState("Likes:");
   return (
     <Row>
       <Col span={3}>
-        <MenuList setSelectMenuItem={setSelectMenuItem} />
+        <MenuListForProfile setSelectMenuItem={setSelectMenuItem} />
       </Col>
-      <div>Likeds:{likedsItems()} </div>
+      <div>Likes:{likedsItems()} </div>
       <div>Basket:{shoppedItems()} </div>
-
-      {/* <List className='Liked'
-      itemLayout="horizontal"
-      dataSource={usersLike}
-      renderItem={item => (
-    <List.Item>
-      <List.Item.Meta
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title={<a href="https://ant.design">Title</a>}
-        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-      />
-    </List.Item>)}
-  /> */}
     </Row>
   );
 };

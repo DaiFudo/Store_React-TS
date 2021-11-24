@@ -1,5 +1,5 @@
 import { Modal } from "../../../UI/Modal/Modal";
-import { Button } from "../../../UI/Button/Button";
+import Button from "../../../UI/Button/Button";
 import ModalForms from "./ModalForm/ModalForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";

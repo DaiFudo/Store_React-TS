@@ -4,11 +4,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Drawer } from "antd";
-import { Button } from "../../../UI/Button/Button";
+import Button from "../../../UI/Button/Button";
 import { HeartOutlined } from "../../../UI/Icons/HeartOutlined";
 import { ShoppingCartOutlined } from "../../../UI/Icons/ShoppingCartOutlined";
-import { toJS } from "mobx";
-import { profile } from "console";
+import addetItemsUser from "../../../../app/utils/addetItemsUser";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);
@@ -26,18 +25,7 @@ const Drawler = () => {
     setVisibleLikes(false);
     setVisiblesShopping(false);
   };
-  const addetItemsUser = (
-    nameLength: number,
-    sliceOption: number,
-    sectionItem: string
-  ) => {
-    const items: any = { ...localStorage };
-    const likedItems = Object.keys(items).filter((key) => {
-      return key.slice(0, nameLength) === sectionItem;
-    });
-    const a = likedItems.map((key) => key.slice(sliceOption));
-    return a.map((item, index) => <div key={index}>{item}</div>);
-  };
+
   const likedsItems = () => {
     const nameLength = 5;
     const sliceOption = 6;
@@ -50,9 +38,7 @@ const Drawler = () => {
     const sectionItem = "Basket";
     return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
-  const profile = () => {
-    navigate("/profile");
-  };
+
   return (
     <div className="user-pannel-icons">
       <Button onClick={showDrawerLikes}>
@@ -78,7 +64,7 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button onClick={profile} type="primary">
+        <Button onClick={() => navigate("/profile")} type="primary">
           Buying!
         </Button>
         {shoppedItems()}

@@ -14,12 +14,10 @@ interface MenuList {
   setSelectMenuItem: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const MenuList: React.FC<MenuList> = (props) => {
-  const location = useLocation();
-
-  const ChangerList = () => {
-    if (location.pathname == "/") {
-      return (
+const MenuListForStore: React.FC<MenuList> = (props) => {
+  return (
+    <Row justify="start">
+      <Col>
         <Menu
           onClick={(e) => props.setSelectMenuItem(e.key)}
           style={{ width: 230 }}
@@ -36,27 +34,8 @@ const MenuList: React.FC<MenuList> = (props) => {
             <Menu.Item key="cpu">CPU</Menu.Item>
           </SubMenu>
         </Menu>
-      );
-    } else if (location.pathname == "/profile") {
-      return (
-        <Menu
-          onClick={(e) => props.setSelectMenuItem(e.key)}
-          style={{ width: 230 }}
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode="inline"
-        >
-          <Menu.Item key="Like">Likes❤️</Menu.Item>
-          <Menu.Item key="Basket">Basket🔥</Menu.Item>
-          <Menu.Item key="Money:">Money: 1000$</Menu.Item>
-        </Menu>
-      );
-    }
-  };
-  return (
-    <Row justify="start">
-      <Col>{ChangerList()}</Col>
+      </Col>
     </Row>
   );
 };
-export default MenuList;
+export default MenuListForStore;

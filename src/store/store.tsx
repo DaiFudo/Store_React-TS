@@ -4,7 +4,7 @@ import { IAll } from "./interface/interfaceProducts";
 import { IUser } from "./interface/interfaceUsers";
 
 class Store {
-  users?: IUser[];
+  users!: IUser[];
   products?: any; // ! ANY
   constructor() {
     makeAutoObservable(this);

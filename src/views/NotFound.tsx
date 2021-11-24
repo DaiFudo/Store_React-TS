@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "../components/UI/Button/Button";
+import Button from "../components/UI/Button/Button";
 import { useLocation } from "react-router-dom";
 //import { Home } from "./routesPusher/homeRoute";
 
