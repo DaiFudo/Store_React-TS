@@ -1,6 +1,6 @@
 /* export type IUsers = Array<IUser>; */
 
-export interface IUser {
+interface IUser {
   nickname: string;
   password: string;
   money?: number;
@@ -8,3 +8,4 @@ export interface IUser {
   admin?: boolean;
   banned?: boolean;
 }
+export default IUser;

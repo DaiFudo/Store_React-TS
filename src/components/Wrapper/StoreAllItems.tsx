@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col } from "../UI/Grid/Col/Col";
-import { Row } from "../UI/Grid/Row/Row";
+import Row from "../UI/Grid/Row/Row";
 
 import ListCards from "./Cards/Cards";
 import MenuListForStore from "./Menu/MenuInStore";

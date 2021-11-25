@@ -6,8 +6,7 @@ import Store from "../../../store/store";
 import "antd/dist/antd.css";
 import { useLocation } from "react-router-dom";
 import { Col } from "../../UI/Grid/Col/Col";
-import { Row } from "../../UI/Grid/Row/Row";
-import { IUser } from "../../../store/interface/interfaceUsers";
+import Row from "../../UI/Grid/Row/Row";
 const { SubMenu } = Menu; // KAK?
 
 interface MenuList {

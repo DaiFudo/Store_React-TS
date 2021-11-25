@@ -5,3 +5,4 @@ import { FC } from "react";
 export const ShoppingOutlined: FC<IconContextProps> = (props) => {
   return <AntIcons {...props} />;
 };
+export default ShoppingOutlined;

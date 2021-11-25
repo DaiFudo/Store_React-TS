@@ -5,3 +5,4 @@ import { FC } from "react";
 export const Card: FC<CardProps> = (props) => {
   return <AntCard {...props} />;
 };
+export default Card;

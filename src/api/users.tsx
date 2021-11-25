@@ -1,4 +1,4 @@
-import { IUser } from "../store/interface/interfaceUsers";
+import IUser from "../store/interface/interfaceUsers";
 import usersData from "../database/users.json";
 
 import Store from "../store/store";

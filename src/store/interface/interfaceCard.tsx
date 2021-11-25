@@ -1,4 +1,4 @@
-export interface ICardInfo {
+interface ICardInfo {
   selectMenuItem?: string;
   price?: number;
   id?: string;
@@ -11,3 +11,4 @@ export interface ICardInfo {
   addInBag?: boolean;
   deleteInBag?: boolean;
 }
+export default ICardInfo;

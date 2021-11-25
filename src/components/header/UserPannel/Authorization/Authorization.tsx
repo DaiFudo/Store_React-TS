@@ -1,4 +1,4 @@
-import { Modal } from "../../../UI/Modal/Modal";
+import Modal from "../../../UI/Modal/Modal";
 import Button from "../../../UI/Button/Button";
 import ModalForms from "./ModalForm/ModalForm";
 import { useState } from "react";

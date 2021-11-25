@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import { Drawer } from "antd";
 import Button from "../../../UI/Button/Button";
-import { HeartOutlined } from "../../../UI/Icons/HeartOutlined";
-import { ShoppingCartOutlined } from "../../../UI/Icons/ShoppingCartOutlined";
+import HeartOutlined from "../../../UI/Icons/HeartOutlined";
+import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
 import addetItemsUser from "../../../../app/utils/addetItemsUser";
 
 const Drawler = () => {

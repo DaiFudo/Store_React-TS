@@ -4,9 +4,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./styles.css";
 import UserPannel from "./UserPannel/UserPannel";
-import { PageHeader } from "../UI/PageHeader/PageHeader";
-import { Row } from "../UI/Grid/Row/Row";
-import { Col } from "../UI/Grid/Col/Col";
+import PageHeader from "../UI/PageHeader/PageHeader";
+import Row from "../UI/Grid/Row/Row";
+import Col from "../UI/Grid/Col/Col";
 
 const Header: React.FC = () => {
   const location = useLocation();

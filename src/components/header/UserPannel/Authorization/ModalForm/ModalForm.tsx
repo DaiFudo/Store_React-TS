@@ -1,5 +1,4 @@
 import React from "react";
-import { toJS } from "mobx";
 
 import Store from "../../../../../store/store";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import Button from "../../../../UI/Button/Button";
-import { IUser } from "../../../../../store/interface/interfaceUsers";
+import IUser from "../../../../../store/interface/interfaceUsers";
 
 const ModalForm: React.FC = () => {
   let navigate = useNavigate();

@@ -1,7 +1,5 @@
 import React from "react";
 
-import Button from "../components/UI/Button/Button";
-
 const Banned = () => {
   return (
     <div

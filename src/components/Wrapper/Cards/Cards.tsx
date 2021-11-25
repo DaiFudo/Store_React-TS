@@ -1,9 +1,9 @@
 import "antd/dist/antd.css";
-import { Row } from "../../UI/Grid/Row/Row";
+import Row from "../../UI/Grid/Row/Row";
 
 import renderListCards from "./filterCards/filterCards";
 
-import { ICardInfo } from "../../../store/interface/interfaceCard";
+import ICardInfo from "../../../store/interface/interfaceCard";
 
 const ListCards = (selectMenuItem: ICardInfo) => {
   return (

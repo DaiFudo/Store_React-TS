@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import addetItemsUser from "../../app/utils/addetItemsUser";
-import { Col } from "../UI/Grid/Col/Col";
-import { Row } from "../UI/Grid/Row/Row";
+import Col from "../UI/Grid/Col/Col";
+import Row from "../UI/Grid/Row/Row";
 import MenuListForProfile from "./Menu/MenuInProfile";
 
-const StoreAllItems: React.FC = () => {
+const ProfileUserItems: React.FC = () => {
   let navigate = useNavigate();
   const chekerLogin = () => {
     if (!localStorage.getItem("nickname")) {
@@ -29,18 +29,14 @@ const StoreAllItems: React.FC = () => {
   };
   console.log("is a likedsItems", likedsItems());
 
-  //const items: any = { ...localStorage };
-  //const likedItems = Object.keys(items).filter((key) => {
-  //  return key.slice(0, 5) === "Liked";
-  //});
-  //const usersLike = likedItems.map((key) => key.slice(6));
-  // Официально поздравляю Илья Игоревич, вы создали первый кусок кода который
-  // почему-то не используется, но приложение работает.
-  const [selectMenuItem, setSelectMenuItem] = useState("Likes:");
+  const [selectMenuItemForProfile, setSelectMenuItemForProfile] =
+    useState("Likes:");
   return (
     <Row>
       <Col span={3}>
-        <MenuListForProfile setSelectMenuItem={setSelectMenuItem} />
+        <MenuListForProfile
+          setSelectMenuItemForProfile={setSelectMenuItemForProfile}
+        />
       </Col>
       <div>Likes:{likedsItems()} </div>
       <div>Basket:{shoppedItems()} </div>
@@ -48,4 +44,4 @@ const StoreAllItems: React.FC = () => {
   );
 };
 
-export default StoreAllItems;
+export default ProfileUserItems;

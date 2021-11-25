@@ -1,5 +1,8 @@
+/* Показывает уведомление о подписке/добавление в корзину на  
+ основной странице и добавляет элемент в localStorage */
+
 import { message } from "antd";
-import { ICardInfo } from "../../store/interface/interfaceCard";
+import ICardInfo from "../../store/interface/interfaceCard";
 import Store from "../../store/store";
 
 let warn = () => {

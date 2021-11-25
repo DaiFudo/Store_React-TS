@@ -1,3 +1,6 @@
+/* Отвечает за показ лайков и подписок на товары 
+на основной странице в "Drawer" */
+
 const addetItemsUser = (
   nameLength: number,
   sliceOption: number,
