@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-import { IAll } from "./interface/interfaceProducts";
+import IAll from "./interface/interfaceProducts";
 import IUser from "./interface/interfaceUsers";
 
 class Store {

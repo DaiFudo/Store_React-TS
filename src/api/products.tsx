@@ -1,7 +1,7 @@
 import productsData from "../database/store.json";
 
 import Store from "../store/store";
-import { IAll } from "../store/interface/interfaceProducts";
+import IAll from "../store/interface/interfaceProducts";
 
 export const handleProduct = () => {
   const ProductsData: IAll[] = JSON.parse(
