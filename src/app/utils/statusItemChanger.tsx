@@ -1,5 +1,5 @@
 /* Показывает уведомление о подписке/добавление в корзину на  
- основной странице и добавляет элемент в localStorage */
+ основной странице и добавляет/удаляет элемент в localStorage */
 
 import { message } from "antd";
 import ICardInfo from "../../store/interface/interfaceCard";

@@ -10,6 +10,7 @@ import "antd/dist/antd.css";
 import ICardInfo from "../../../../store/interface/interfaceCard";
 import statusItemChanger from "../../../../app/utils/statusItemChanger";
 import Button from "../../../UI/Button/Button";
+import { toJS } from "mobx";
 
 const renderListCards = ({ selectMenuItem }: any) => {
   // ANY
@@ -26,6 +27,7 @@ const renderListCards = ({ selectMenuItem }: any) => {
     const deleted = "Delete from you basket";
     statusItemChanger(item, add, deleted);
   };
+  console.log(toJS(filterCards), "filterCards");
 
   return filterCards!.map((item: ICardInfo) => {
     let sales = 1;

@@ -21,7 +21,6 @@ const Header: React.FC = () => {
   };
   const ChangerUserPannel = () => {
     if (location.pathname == "/profile") {
-      console.log("good");
       return <></>;
     } else {
       return <UserPannel />;

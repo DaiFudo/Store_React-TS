@@ -14,6 +14,7 @@ const ModalForm: React.FC = () => {
   const onFinish = (values: IUser) => {
     const nameFromInput = values.nickname;
     const passFromInput = values.password;
+
     const nick = Store.users!.find(
       (item: IUser) => item.nickname === nameFromInput
     );
@@ -22,8 +23,10 @@ const ModalForm: React.FC = () => {
     );
 
     if (nick && pass) {
+      console.log(nick, "is nickick");
       localStorage.setItem("nickname", nameFromInput);
       localStorage.setItem("password", passFromInput);
+      //localStorage.setItem("money", money);
 
       navigate("/profile");
     } else {

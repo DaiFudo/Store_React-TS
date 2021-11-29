@@ -5,11 +5,11 @@ import renderListCards from "./filterCards/filterCards";
 
 import ICardInfo from "../../../store/interface/interfaceCard";
 
-const ListCards = (selectMenuItem: ICardInfo) => {
+const ListCardsInStore = (selectMenuItem: ICardInfo) => {
   return (
     <div>
       <Row gutter={[48, 24]}>{renderListCards(selectMenuItem)}</Row>
     </div>
   );
 };
-export default ListCards;
+export default ListCardsInStore;

@@ -7,7 +7,6 @@ import "antd/dist/antd.css";
 import { useLocation } from "react-router-dom";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
-const { SubMenu } = Menu; // KAK?
 
 interface MenuListProfile {
   setSelectMenuItemForProfile: React.Dispatch<React.SetStateAction<string>>;
@@ -24,7 +23,7 @@ const MenuListForProfile: React.FC<MenuListProfile> = (props) => {
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          <Menu.Item key="Like">Likes❤️</Menu.Item>
+          <Menu.Item key="Liked">Likes❤️</Menu.Item>
           <Menu.Item key="Basket">Basket🔥</Menu.Item>
         </Menu>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
