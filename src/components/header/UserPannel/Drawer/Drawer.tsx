@@ -38,6 +38,13 @@ const Drawler = () => {
     const sectionItem = "Basket";
     return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
+  const chekerLogin = () => {
+    if (!localStorage.getItem("nickname")) {
+      navigate("/");
+    } else {
+      navigate("/profile");
+    }
+  };
 
   return (
     <div className="user-pannel-icons">
@@ -64,7 +71,7 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button onClick={() => navigate("/profile")} type="primary">
+        <Button onClick={() => chekerLogin()} type="primary">
           Buying!
         </Button>
         {shoppedItems()}
