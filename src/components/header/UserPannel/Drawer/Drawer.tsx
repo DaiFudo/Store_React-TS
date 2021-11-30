@@ -72,7 +72,7 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button onClick={() => goToBasket()} type="primary">
+        <Button onClick={() => navigate("/profile")} type="primary">
           Buying!
         </Button>
         {shoppedItems()}
