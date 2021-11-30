@@ -2,30 +2,27 @@
  основной странице и добавляет/удаляет элемент в localStorage */
 
 import { message } from "antd";
+import { useEffect } from "react";
 import ICardInfo from "../../store/interface/interfaceCard";
-import Store from "../../store/store";
+
+import { toJS } from "mobx";
+import StoreAccount from "../../store/storeAccount";
+import storeAccount from "../../store/storeAccount";
 
 let warn = () => {
-  message.error(`Please log in or registration`);
+  message.error(`Please login or registration`);
 };
+
 const statusItemChanger = (item: ICardInfo, add: string, deleted: string) => {
-  const nicknameInLocalStorage = localStorage.getItem(`nickname`);
-  const passwordInLocalStorage = localStorage.getItem(`password`);
-
-  const accountVefinedNickname = Store.users?.find((user) => {
-    console.log(user.nickname, nicknameInLocalStorage, "run run run");
-    return user.nickname == nicknameInLocalStorage;
-  });
-  const accountVefinedPassword = Store.users?.find(
-    (user) => user.password == passwordInLocalStorage
-  );
-
-  if (accountVefinedNickname && accountVefinedPassword) {
-    let itemInLocalStorage = localStorage.getItem(`${add}:${item.name}`);
-    if (itemInLocalStorage != item.id) {
+  console.log(toJS(item));
+  if (StoreAccount.user) {
+    if (StoreAccount.user.likes != item.id) {
       message.success(`${add}: ${item.name}`);
-      return localStorage.setItem(`${add}:${item.name}`, item.id!);
-    } else if (itemInLocalStorage === item.id) {
+
+      // storeAccount.user.likes?.push(item.id!);
+      StoreAccount.handlerIdLike(item);
+      console.log(toJS(StoreAccount.user));
+    } else if (item.id) {
       message.warning(`${deleted}: ${item.name}`);
       return localStorage.removeItem(`${add}:${item.name}`);
     }
@@ -34,4 +31,5 @@ const statusItemChanger = (item: ICardInfo, add: string, deleted: string) => {
     return;
   }
 };
+
 export default statusItemChanger;

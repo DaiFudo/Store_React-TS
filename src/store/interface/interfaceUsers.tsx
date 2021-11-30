@@ -1,8 +1,11 @@
 /* export type IUsers = Array<IUser>; */
-
+import ICardInfo from "../interface/interfaceCard";
 interface IUser {
-  nickname: string;
-  password: string;
+  likes?: ICardInfo[];
+  basket?: ICardInfo[];
+  buying?: ICardInfo[];
+  nickname?: string;
+  password?: string;
   money?: number;
   id?: string;
   admin?: boolean;

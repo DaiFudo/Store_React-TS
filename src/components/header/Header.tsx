@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 import "antd/dist/antd.css";
 import "./styles.css";
@@ -7,18 +8,13 @@ import UserPannel from "./UserPannel/UserPannel";
 import PageHeader from "../UI/PageHeader/PageHeader";
 import Row from "../UI/Grid/Row/Row";
 import Col from "../UI/Grid/Col/Col";
+import UserName from "../../app/utils/UserName";
+import storeAccount from "../../store/storeAccount";
 
-const Header: React.FC = () => {
+const Header: React.FC = observer(() => {
   const location = useLocation();
   let navigate = useNavigate();
-  const ChekerName = () => {
-    if (localStorage.getItem("nickname")) {
-      let userCheker = localStorage.getItem("nickname")?.toUpperCase();
-      return <div>{userCheker}</div>;
-    } else {
-      return <div>Not authorized</div>;
-    }
-  };
+
   const ChangerUserPannel = () => {
     if (location.pathname == "/profile") {
       return <></>;
@@ -34,8 +30,8 @@ const Header: React.FC = () => {
           <div onClick={() => navigate("/")}>
             <PageHeader
               style={{ cursor: "pointer" }}
-              title="Store 👾"
-              subTitle={ChekerName()}
+              title="Store 👾 "
+              subTitle={UserName()}
             />
           </div>
         </Col>
@@ -45,5 +41,5 @@ const Header: React.FC = () => {
       </Row>
     </div>
   );
-};
+});
 export default Header;

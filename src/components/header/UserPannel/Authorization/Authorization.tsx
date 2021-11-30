@@ -3,6 +3,7 @@ import Button from "../../../UI/Button/Button";
 import ModalForms from "./ModalForm/ModalForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import storeAccount from "../../../../store/storeAccount";
 const Authorization = () => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -19,8 +20,7 @@ const Authorization = () => {
   };
 
   const logOut = () => {
-    localStorage.clear();
-    navigate("/");
+    storeAccount.handleAccount(undefined);
   };
 
   const regOn = () => {
@@ -40,7 +40,7 @@ const Authorization = () => {
 
   return (
     <div>
-      {localStorage.getItem("nickname") ? regOn() : regOff()}
+      {storeAccount.user?.nickname ? regOn() : regOff()}
       <Modal
         title="Auth"
         visible={visible}

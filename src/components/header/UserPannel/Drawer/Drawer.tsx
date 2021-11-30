@@ -8,6 +8,7 @@ import Button from "../../../UI/Button/Button";
 import HeartOutlined from "../../../UI/Icons/HeartOutlined";
 import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
 import addetItemsUser from "../../../../app/utils/addetItemsUser";
+import storeAccount from "../../../../store/storeAccount";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);
@@ -38,6 +39,13 @@ const Drawler = () => {
     const sectionItem = "Basket";
     return addetItemsUser(nameLength, sliceOption, sectionItem);
   };
+  const goToBasket = () => {
+    if (storeAccount.user?.nickname) {
+      navigate("/profile");
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div className="user-pannel-icons">
@@ -64,7 +72,7 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button onClick={() => navigate("/profile")} type="primary">
+        <Button onClick={() => goToBasket()} type="primary">
           Buying!
         </Button>
         {shoppedItems()}
