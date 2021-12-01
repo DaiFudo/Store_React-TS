@@ -15,16 +15,32 @@ let warn = () => {
 
 const statusItemChanger = (item: ICardInfo, add: string, deleted: string) => {
   console.log(toJS(item));
+
+  const allItems = StoreAccount.user?.likes?.map((item: ICardInfo) =>
+    toJS(item)
+  );
+  const numberDeletedItem: number = allItems!.findIndex(
+    (itemFinder) => itemFinder.name == item.name
+  );
+
   if (StoreAccount.user) {
-    if (StoreAccount.user.likes != item.id) {
+    const names = StoreAccount.user?.likes?.map((item: ICardInfo) =>
+      toJS(item.name)
+    );
+    const findName = names?.includes(item.name);
+    if (!findName) {
       message.success(`${add}: ${item.name}`);
 
-      // storeAccount.user.likes?.push(item.id!);
-      StoreAccount.handlerIdLike(item);
+      StoreAccount.handlerLike(item);
       console.log(toJS(StoreAccount.user));
-    } else if (item.id) {
+    } else if (findName) {
       message.warning(`${deleted}: ${item.name}`);
-      return localStorage.removeItem(`${add}:${item.name}`);
+      allItems!.splice(numberDeletedItem, 1);
+
+      if (!!allItems) {
+        StoreAccount.DeleteLike(allItems);
+      }
+      return;
     }
   } else {
     warn();
