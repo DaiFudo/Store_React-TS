@@ -11,8 +11,6 @@ import IUser from "../../../../../store/interface/interfaceUsers";
 import { toJS } from "mobx";
 
 const ModalForm: React.FC = () => {
-  let navigate = useNavigate();
-
   const onFinish = (values: IUser) => {
     const nameFromInput = values.nickname;
 
@@ -20,21 +18,9 @@ const ModalForm: React.FC = () => {
       const userInStore = Store.users!.find(
         (item: IUser) => item.nickname === nameFromInput
       );
-      console.log(toJS(StoreAccount));
       StoreAccount.handleAccount(userInStore);
     };
     findNick();
-
-    /*  if (nick && pass) {
-      console.log(nick, "is nickick");
-      localStorage.setItem("nickname", nameFromInput);
-      localStorage.setItem("password", passFromInput);
-      //localStorage.setItem("money", money);
-
-      //navigate("/profile");
-    } else {
-      alert("Введите верный логин и пароль.");
-    } */
   };
   const onFinishFailed = (errorInfo: any) => {
     // ANY

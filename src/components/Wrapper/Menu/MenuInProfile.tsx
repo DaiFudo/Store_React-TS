@@ -3,6 +3,7 @@ import { toJS } from "mobx";
 import Store from "../../../store/store";
 
 //import { Menu } from "../../UI/Menu/Menu"; KAK?
+import StoreAccount from "../../../store/storeAccount";
 import "antd/dist/antd.css";
 import { useLocation } from "react-router-dom";
 import Col from "../../UI/Grid/Col/Col";
@@ -27,7 +28,7 @@ const MenuListForProfile: React.FC<MenuListProfile> = (props) => {
           <Menu.Item key="Basket">Basket🔥</Menu.Item>
         </Menu>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          Money: 1000$
+          {StoreAccount.user!.money}$
         </div>
       </Col>
     </Row>

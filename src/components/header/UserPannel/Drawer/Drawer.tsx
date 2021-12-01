@@ -9,6 +9,7 @@ import HeartOutlined from "../../../UI/Icons/HeartOutlined";
 import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
 import addetItemsUser from "../../../../app/utils/addetItemsUser";
 import storeAccount from "../../../../store/storeAccount";
+import warn from "../../../../app/utils/warn";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);
@@ -43,7 +44,8 @@ const Drawler = () => {
     if (storeAccount.user?.nickname) {
       navigate("/profile");
     } else {
-      return false;
+      warn();
+      setVisiblesShopping(false);
     }
   };
 
@@ -72,7 +74,7 @@ const Drawler = () => {
         onClose={onClose}
         visible={visibles}
       >
-        <Button onClick={() => navigate("/profile")} type="primary">
+        <Button onClick={() => goToBasket()} type="primary">
           Buying!
         </Button>
         {shoppedItems()}

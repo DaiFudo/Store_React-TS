@@ -28,7 +28,6 @@ const renderListCards = ({ selectMenuItem }: any) => {
     const deleted = "Delete from you basket";
     statusItemChanger(item, add, deleted);
   };
-  console.log(toJS(filterCards), "filterCards");
 
   return filterCards!.map((item: ICardInfo) => {
     let sales = 1;

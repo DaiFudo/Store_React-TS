@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import StoreAccount from "../../store/storeAccount";
+
 import Col from "../UI/Grid/Col/Col";
 import Row from "../UI/Grid/Row/Row";
 import MenuListForProfile from "./Menu/MenuInProfile";
@@ -10,7 +12,7 @@ import ListCardsInProfile from "./Cards/CardsInProfile";
 const ProfileUserItems: React.FC = () => {
   let navigate = useNavigate();
   const chekerLogin = () => {
-    if (!localStorage.getItem("nickname")) {
+    if (!StoreAccount.user) {
       navigate("/");
     }
   };
