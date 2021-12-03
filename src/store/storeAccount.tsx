@@ -6,31 +6,35 @@ import { toJS } from "mobx";
 import ICardInfo from "./interface/interfaceCard";
 
 class StoreAccount {
-  user?: IUser;
-  products?: any; // ! ANY
+  user!: IUser;
   constructor() {
     makeAutoObservable(this);
   }
-  handleAccount(user?: IUser) {
+  handleAccount(user: IUser) {
     this.user = user;
   }
 
-  handlerLike(user: ICardInfo) {
-    console.log(toJS(user), "in store");
-    this.user!.likes = [...(this.user!.likes ?? []), user];
+  updateLike(user: ICardInfo) {
+    console.log(toJS(user), "StoreAccount");
+    this.user.likes = [...(this.user!.likes ?? []), user];
     console.log(toJS(this));
   }
-  handlerBasket(user: ICardInfo) {
-    console.log(toJS(user), "in store");
-    this.user!.basket = [...(this.user!.basket ?? []), user];
+  updateBasket(user: ICardInfo) {
+    console.log(toJS(user), "StoreAccount");
+    this.user.basket = [...(this.user!.basket ?? []), user];
     console.log(toJS(this));
   }
-  DeleteLike(user: ICardInfo[]) {
-    this.user!.likes = user;
+  updateBuying(user: ICardInfo) {
+    console.log(toJS(user), "StoreAccount");
+    this.user.buying = [...(this.user!.buying ?? []), user];
     console.log(toJS(this));
   }
-  DeleteBasket(user: ICardInfo[]) {
-    this.user!.basket = user;
+  deleteLike(user: ICardInfo[]) {
+    this.user.likes = user;
+    console.log(toJS(this));
+  }
+  deleteBasket(user: ICardInfo[]) {
+    this.user.basket = user;
     console.log(toJS(this));
   }
 }

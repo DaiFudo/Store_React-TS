@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
@@ -9,7 +9,6 @@ import PageHeader from "../UI/PageHeader/PageHeader";
 import Row from "../UI/Grid/Row/Row";
 import Col from "../UI/Grid/Col/Col";
 import UserName from "../../app/utils/UserName";
-import storeAccount from "../../store/storeAccount";
 
 const Header: React.FC = observer(() => {
   const location = useLocation();

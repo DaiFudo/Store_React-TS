@@ -24,11 +24,12 @@ const MenuListForProfile: React.FC<MenuListProfile> = (props) => {
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          <Menu.Item key="Liked">Likes❤️</Menu.Item>
-          <Menu.Item key="Basket">Basket🔥</Menu.Item>
+          <Menu.Item key="likes">Likes❤️</Menu.Item>
+          <Menu.Item key="basket">Basket🔥</Menu.Item>
+          <Menu.Item key="buying">Buying🤑</Menu.Item>
         </Menu>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          {StoreAccount.user!.money}$
+          {StoreAccount.user?.money}$
         </div>
       </Col>
     </Row>

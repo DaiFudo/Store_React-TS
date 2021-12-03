@@ -18,7 +18,7 @@ const ModalForm: React.FC = () => {
       const userInStore = Store.users!.find(
         (item: IUser) => item.nickname === nameFromInput
       );
-      StoreAccount.handleAccount(userInStore);
+      StoreAccount.handleAccount(userInStore!);
     };
     findNick();
   };

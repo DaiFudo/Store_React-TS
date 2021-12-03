@@ -29,16 +29,14 @@ const Drawler = () => {
   };
 
   const likedsItems = () => {
-    const nameLength = 5;
-    const sliceOption = 6;
-    const sectionItem = "Liked";
-    return addetItemsUser(nameLength, sliceOption, sectionItem);
+    return storeAccount.user?.likes.map((item) => (
+      <div key={item.id}>{item.name}</div>
+    ));
   };
   const shoppedItems = () => {
-    const nameLength = 6;
-    const sliceOption = 7;
-    const sectionItem = "Basket";
-    return addetItemsUser(nameLength, sliceOption, sectionItem);
+    return storeAccount.user?.basket.map((item) => (
+      <div key={item.id}>{item.name}</div>
+    ));
   };
   const goToBasket = () => {
     if (storeAccount.user?.nickname) {

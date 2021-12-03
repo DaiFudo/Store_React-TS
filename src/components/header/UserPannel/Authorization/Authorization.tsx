@@ -20,7 +20,7 @@ const Authorization = () => {
   };
 
   const logOut = () => {
-    storeAccount.handleAccount(undefined);
+    storeAccount.handleAccount(undefined!);
   };
 
   const regOn = () => {

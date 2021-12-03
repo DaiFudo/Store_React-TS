@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Col from "../UI/Grid/Col/Col";
 import Row from "../UI/Grid/Row/Row";
-
+import { observer } from "mobx-react-lite";
 import ListCards from "./Cards/CardsInStore";
 import MenuListForStore from "./Menu/MenuInStore";
-
-const StoreAllItems: React.FC = () => {
+const StoreAllItems: React.FC = observer(() => {
   const [selectMenuItem, setSelectMenuItem] = useState("cpu");
 
   return (
@@ -18,6 +17,6 @@ const StoreAllItems: React.FC = () => {
       </Col>
     </Row>
   );
-};
+});
 
 export default StoreAllItems;

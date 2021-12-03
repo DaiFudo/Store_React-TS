@@ -9,7 +9,10 @@ import MenuListForProfile from "./Menu/MenuInProfile";
 
 import ListCardsInProfile from "./Cards/CardsInProfile";
 
-const ProfileUserItems: React.FC = () => {
+import storeAccount from "../../store/storeAccount";
+import { observer } from "mobx-react-lite";
+
+const ProfileUserItems: React.FC = observer(() => {
   let navigate = useNavigate();
   const chekerLogin = () => {
     if (!StoreAccount.user) {
@@ -19,7 +22,7 @@ const ProfileUserItems: React.FC = () => {
   chekerLogin();
 
   const [selectMenuItemForProfile, setSelectMenuItemForProfile] =
-    useState("Basket");
+    useState("basket");
 
   return (
     <Row>
@@ -30,11 +33,12 @@ const ProfileUserItems: React.FC = () => {
       </Col>
       <Col span={18}>
         <ListCardsInProfile
+          filterCards={storeAccount.user.basket}
           selectMenuItemForProfile={selectMenuItemForProfile}
         />
       </Col>
     </Row>
   );
-};
+});
 
 export default ProfileUserItems;

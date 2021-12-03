@@ -12,20 +12,25 @@ import statusItemChanger from "../../../../app/utils/statusItemChanger";
 import Button from "../../../UI/Button/Button";
 import { toJS } from "mobx";
 import { useEffect } from "react";
+import storeAccount from "../../../../store/storeAccount";
+import store from "../../../../store/store";
 
 const renderListCards = ({ selectMenuItem }: any) => {
   // ANY
-
+  console.log(selectMenuItem);
   const filterCards = Store.products.devices[selectMenuItem];
+  console.log(toJS(Store));
 
   const likeItem = (item: ICardInfo) => {
     const add = "Liked";
     const deleted = "Unliked";
+    const category = "Liked";
     statusItemChanger(item, add, deleted);
   };
   const buyingItem = (item: ICardInfo) => {
     const add = "Basket";
     const deleted = "Delete from you basket";
+    const category = "Basket";
     statusItemChanger(item, add, deleted);
   };
 
