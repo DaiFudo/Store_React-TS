@@ -33,10 +33,40 @@ const renderListCards = ({ selectMenuItem }: any) => {
     const category = "Basket";
     statusItemChanger(item, add, deleted);
   };
-
   return filterCards!.map((item: ICardInfo) => {
-    let sales = 1;
-    const price = `${sales * item.price!}$`; // для распродаж
+    const asd = () => {
+      if (item.promotion <= item.price && item.promotion !== 0) {
+        return (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <div
+              style={{
+                textDecoration: "line-through",
+                color: "#d1d1e0",
+              }}
+            >
+              {item.price}$
+            </div>
+            <div
+              style={{
+                fontWeight: "bold",
+                color: "#33cc33",
+                textShadow: "1px 1px 1px  1px #000",
+              }}
+            >
+              {item.promotion}$ Sales
+            </div>
+          </div>
+        );
+      } else {
+        return <div style={{ fontWeight: "bold" }}>{item.price}$</div>;
+      }
+    };
     return (
       <Col key={item.id} span={6}>
         <Card
@@ -53,10 +83,11 @@ const renderListCards = ({ selectMenuItem }: any) => {
           ]}
         >
           <Image src={item.img} />
-          <Meta title={item.name} description={price} />
+          <Meta title={item.name} description={asd()} />
         </Card>
       </Col>
     );
   });
 };
 export default renderListCards;
+//sallesPrices < item.price ? sallesPrices : item.price

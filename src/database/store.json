@@ -7,7 +7,7 @@
                "img":"https://static.razer.ru/231521/800x600-razer-viper-ultimate-quartz-and-charging-dock-product-promo.png",
                "id":"1asdxzc",
                "price":152,
-               "promotion":111
+               "promotion":0
             },
             {
                "name":"Razer DeadAdder Chroma",
@@ -21,7 +21,7 @@
                "img":"https://static.razer.ru/230753/800x600-razer-deathadder-v2-pro-product-promo.png",
                "id":"212zxc",
                "price":112,
-               "promotion":100
+               "promotion":0
             },
             {
                "name":"Razer Basilisk X HyperSpeed",
@@ -35,7 +35,7 @@
                "img":"https://static.razer.ru/165191/800x600mamba-elite-promo.png",
                "id":"3zxcsa",
                "price":129,
-               "promotion":false
+               "promotion":111
             }
          ],
          "keyboards":[
@@ -44,21 +44,21 @@
                "img":"https://static.razer.ru/230822/800x600-razer-blackwidow-v3-pro-product-promo.png",
                "id":"sfd3",
                "price":128,
-               "promotion":false
+               "promotion":121
             },
             {
                "name":"Razer Acroi Energy",
                "img":"https://static.razer.ru/230435/800x600-razer-pro-type-product-promo.png",
                "id":"1sada",
                "price":125,
-               "promotion":false
+               "promotion":0
             },
             {
                "name":"Razer Tournament Edition",
                "img":"https://static.razer.ru/237599/800x600-razer-blackwidow-v3-mini-hyperspeed-phantom-edition-product-promo.png",
                "id":"2",
                "price":132,
-               "promotion":false
+               "promotion":113
             }
          ],
          "headphones":[
@@ -67,21 +67,21 @@
                "img":"https://static.razer.ru/237696/800x600-razer-blackshark-v2-pro-white-product-promo.png",
                "id":"1",
                "price":142,
-               "promotion":false
+               "promotion":124
             },
             {
                "name":"Razer Kraken 7.1",
                "img":"https://static.razer.ru/135883/800x600nari-ultimate-promo.png",
                "id":"2fdh",
                "price":12,
-               "promotion":false
+               "promotion":0
             },
             {
                "name":"Razer Kraken 7.1 Chroma",
                "img":"https://static.razer.ru/214535/800x600-razer-nari-ultimate-xbox-one-product-promo-1.png",
                "id":"3dfhb",
                "price":12,
-               "promotion":false
+               "promotion":0
             }
          ],
          "cpu":[
@@ -90,42 +90,42 @@
                "img":"https://cdn1.ozone.ru/multimedia/wc1200/1030523244.jpg",
                "id":"1asd",
                "price":110,
-               "promotion":false
+               "promotion":0
             },
             {
                "name":"Intel Core i5 10400F",
                "img":"https://cdn1.ozone.ru/s3/multimedia-4/wc1200/6059587636.jpg",
                "id":"1vzx",
                "price":340,
-               "promotion":false
+               "promotion":240
             },
             {
                "name":"Intel Core i7 11700F, BOX",
                "img":"https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6100103028.jpg",
                "id":"1zvcx",
                "price":155,
-               "promotion":false
+               "promotion":0
             },
             {
                "name":"AMD Ryzen 9 5900X",
                "img":"https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6084780453.jpg",
                "id":"1av",
                "price":500,
-               "promotion":false
+               "promotion":0
             },
             {
                "name":"AMD Ryzen 5 3600",
                "img":"https://cdn1.ozone.ru/s3/multimedia-v/wc1200/6048927631.jpg",
                "id":"1vads",
                "price":139,
-               "promotion":false
+               "promotion":116
             },
             {
                "name":"AMD Ryzen 9 Athlon 3000G",
                "img":"https://cdn1.ozone.ru/s3/multimedia-6/wc1200/6084780438.jpg",
                "id":"1gd",
                "price":67,
-               "promotion":false
+               "promotion":33
             }
          ]
       }
