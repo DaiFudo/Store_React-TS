@@ -7,6 +7,6 @@ const UserName = () => {
     return `${storeAccount.user.nickname}`;
   } else {
     return <div>Not Auth</div>;
-  } // map your state here // and then update the state
+  }
 };
 export default UserName;

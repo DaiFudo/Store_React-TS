@@ -16,9 +16,6 @@ handleProduct();
 const App: React.FC = () => {
   // let location = useLocation();
 
-  // store_react
-  // запрос на локал
-
   return (
     <TransitionGroup component={null}>
       <CSSTransition classNames="fade" timeout={300}>

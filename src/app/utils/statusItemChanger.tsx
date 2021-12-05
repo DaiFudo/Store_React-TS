@@ -51,13 +51,8 @@ const statusItemChanger = (
         StoreAccount.updateBasket(item);
       } else if (findName) {
         message.warning(`${deleted}: ${item.name}`);
-        allItems!.splice(numberDeletedItem, 1);
-        const asd = allItems!.splice(numberDeletedItem, 1);
-        console.log(asd, numberDeletedItem);
-
-        if (!!allItems) {
-          StoreAccount.deleteBasket(allItems);
-        }
+        allItems.splice(numberDeletedItem, 1);
+        StoreAccount.deleteBasket(allItems);
       }
     }
   } else {
