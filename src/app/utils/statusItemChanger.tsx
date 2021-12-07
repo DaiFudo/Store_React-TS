@@ -6,7 +6,6 @@ import ICardInfo from "../../store/interface/interfaceCard";
 import { toJS } from "mobx";
 import StoreAccount from "../../store/storeAccount";
 import warn from "./warn";
-import storeAccount from "../../store/storeAccount";
 
 const statusItemChanger = (
   item: ICardInfo,

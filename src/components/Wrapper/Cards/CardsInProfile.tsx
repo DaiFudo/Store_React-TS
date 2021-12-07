@@ -11,36 +11,35 @@ import MinusOutlined from "../../UI/Icons/MinusOutlined";
 import Meta from "antd/lib/card/Meta";
 import Col from "../../UI/Grid/Col/Col";
 import statusItemChanger from "../../../app/utils/statusItemChanger";
+import storeAccount from "../../../store/storeAccount";
 
-interface IListCardsInProfile {
-  filterCards: any[];
-  selectMenuItemForProfile: string;
-}
-
-const ListCardsInProfile: React.FC<IListCardsInProfile> = ({
-  selectMenuItemForProfile,
-  filterCards,
-}) => {
+const ListCardsInProfile: React.FC<{
+  selectMenuItemForProfile: "likes" | "basket" | "buying";
+}> = (props) => {
+  const filterUserCard = storeAccount.user[props.selectMenuItemForProfile];
   const likeItem = (item: ICardInfo) => {
-    const category = "Liked";
+    const add = "Liked";
     const deleted = "Unliked";
-    statusItemChanger(item, category, deleted);
+    const category = "Liked";
+    statusItemChanger(item, add, deleted);
   };
   const buyingItem = (item: ICardInfo) => {
-    const category = "Basket";
+    const add = "Basket";
     const deleted = "Delete from you basket";
-    statusItemChanger(item, category, deleted);
+    const category = "Basket";
+    statusItemChanger(item, add, deleted);
   };
   const updateBuying = (item: ICardInfo) => {
     const category = "Basket";
     const deleted = "Delete from you basket";
     statusItemChanger(item, category, deleted);
   };
+  const byuingItemsUser = () => {};
 
   return (
     <div>
       <Row gutter={[48, 24]}>
-        {filterCards!.map((item: ICardInfo) => (
+        {filterUserCard!.map((item: ICardInfo) => (
           <Col key={item.id} span={6}>
             <Card
               key={item.id}
@@ -53,7 +52,7 @@ const ListCardsInProfile: React.FC<IListCardsInProfile> = ({
                 <Button
                   id={item.id}
                   type="text"
-                  onClick={() => updateBuying(item)}
+                  onClick={() => buyingItem(item)}
                 >
                   <ShoppingOutlined key={`basket ${item.id}`} />
                 </Button>,
