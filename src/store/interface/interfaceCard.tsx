@@ -4,11 +4,11 @@ interface ICardInfo {
   selectMenuItemForProfile?: string;
   price: number;
   promotion: number;
-  id?: string;
+  id: string;
   name?: string;
   img?: string;
-  title?: string;
-  descr?: string;
+  title: string;
+  descr: string;
   like?: boolean;
   disLike?: boolean;
   addInBag?: boolean;

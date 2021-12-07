@@ -7,7 +7,6 @@ import Col from "../UI/Grid/Col/Col";
 import Row from "../UI/Grid/Row/Row";
 import MenuListForProfile from "./Menu/MenuInProfile";
 import ListCardsInProfile from "./Cards/CardsInProfile";
-import storeAccount from "../../store/storeAccount";
 import { observer } from "mobx-react-lite";
 
 const ProfileUserItems: React.FC = observer(() => {
@@ -22,7 +21,6 @@ const ProfileUserItems: React.FC = observer(() => {
   const [selectMenuItemForProfile, setSelectMenuItemForProfile] = useState<
     "likes" | "basket" | "buying"
   >("basket");
-  console.log(selectMenuItemForProfile);
 
   return (
     <Row>

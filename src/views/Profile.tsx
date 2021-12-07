@@ -8,7 +8,7 @@ import storeAccount from "../store/storeAccount";
 const Auth: React.FC = () => {
   const navigate = useNavigate();
   if (!storeAccount.user) {
-    navigate("/profile");
+    navigate("/");
   }
   return (
     <>

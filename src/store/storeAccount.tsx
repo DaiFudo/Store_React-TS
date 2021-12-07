@@ -33,6 +33,10 @@ class StoreAccount {
     this.user.likes = user;
     console.log(toJS(this));
   }
+  updateMoney(user: number) {
+    this.user.money = user;
+    console.log(toJS(this));
+  }
   deleteBasket(user: ICardInfo[]) {
     this.user.basket = user;
     console.log(toJS(this));

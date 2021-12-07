@@ -9,10 +9,13 @@ import { toJS } from "mobx";
 import StoreAccount from "../../store/storeAccount";
 import warn from "./warn";
 
-const byuingItemsUser = (
-  item: ICardInfo,
-  category: string,
-  deleted: string
-) => {};
+const byuingItemsUser = (item: ICardInfo, category: string) => {
+  if (StoreAccount.user.money <= item.price) {
+    return false;
+  } else {
+    StoreAccount.updateMoney(StoreAccount.user.money - item.price);
+    StoreAccount.updateBuying(item);
+  }
+};
 
 export default byuingItemsUser;

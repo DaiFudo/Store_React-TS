@@ -17,19 +17,8 @@ import store from "../../../store/store";
 
 const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
   const filterCards = store.products.devices[selectMenuItem];
+  console.log(toJS(storeAccount.user.admin));
 
-  const likeItem = (item: ICardInfo) => {
-    const add = "Liked";
-    const deleted = "Unliked";
-    const category = "Liked";
-    statusItemChanger(item, add, deleted);
-  };
-  const buyingItem = (item: ICardInfo) => {
-    const add = "Basket";
-    const deleted = "Delete from you basket";
-    const category = "Basket";
-    statusItemChanger(item, add, deleted);
-  };
   return (
     <div>
       <Row gutter={[48, 24]}>
@@ -77,14 +66,14 @@ const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
                   <Button
                     id={item.id}
                     type="text"
-                    onClick={() => likeItem(item)}
+                    onClick={() => statusItemChanger(item, "liked")}
                   >
                     <PlusOutlined key={`pluse ${item.id}`} />
                   </Button>,
                   <Button
                     id={item.id}
                     type="text"
-                    onClick={() => buyingItem(item)}
+                    onClick={() => statusItemChanger(item, "basket")}
                   >
                     <ShoppingOutlined key={`basket ${item.id}`} />
                   </Button>,

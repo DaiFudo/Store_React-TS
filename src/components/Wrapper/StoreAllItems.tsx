@@ -13,7 +13,14 @@ const StoreAllItems: React.FC = observer(() => {
         <MenuListForStore setSelectMenuItem={setSelectMenuItem} />
       </Col>
       <Col span={18}>
-        <ListCards selectMenuItem={selectMenuItem} price={0} promotion={0} />
+        <ListCards
+          selectMenuItem={selectMenuItem}
+          price={0}
+          promotion={0}
+          id={""}
+          title={""}
+          descr={""}
+        />
       </Col>
     </Row>
   );

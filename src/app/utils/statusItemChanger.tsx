@@ -7,13 +7,13 @@ import { toJS } from "mobx";
 import StoreAccount from "../../store/storeAccount";
 import warn from "./warn";
 
-const statusItemChanger = (
-  item: ICardInfo,
-  category: string,
-  deleted: string
-) => {
+interface IUasdr {
+  [index: string]: string;
+}
+
+const statusItemChanger = (item: ICardInfo, category: string) => {
   if (StoreAccount.user) {
-    if (category == "Liked") {
+    if (category == "liked") {
       const allItems = StoreAccount.user.likes.map((item: ICardInfo) =>
         toJS(item)
       );
@@ -25,16 +25,16 @@ const statusItemChanger = (
       );
       const findName = names?.includes(item.name);
       if (!findName) {
-        message.success(`${category}: ${item.name}`);
+        message.success(`Add: ${item.name}`);
         StoreAccount.updateLike(item);
       } else if (findName) {
-        message.warning(`${deleted}: ${item.name}`);
+        message.warning(`Removed: ${item.name}`);
         allItems!.splice(numberDeletedItem, 1);
         if (!!allItems) {
           StoreAccount.deleteLike(allItems);
         }
       }
-    } else if (category == "Basket") {
+    } else if (category === "basket") {
       const allItems = StoreAccount.user.basket.map((item: ICardInfo) =>
         toJS(item)
       );
@@ -46,10 +46,10 @@ const statusItemChanger = (
       );
       const findName = names?.includes(item.name);
       if (!findName) {
-        message.success(`${category}: ${item.name}`);
+        message.success(`Add: ${item.name}`);
         StoreAccount.updateBasket(item);
       } else if (findName) {
-        message.warning(`${deleted}: ${item.name}`);
+        message.warning(`Removed: ${item.name}`);
         allItems.splice(numberDeletedItem, 1);
         StoreAccount.deleteBasket(allItems);
       }

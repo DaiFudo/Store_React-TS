@@ -11,30 +11,18 @@ import MinusOutlined from "../../UI/Icons/MinusOutlined";
 import Meta from "antd/lib/card/Meta";
 import Col from "../../UI/Grid/Col/Col";
 import statusItemChanger from "../../../app/utils/statusItemChanger";
+import byuingItemsUser from "../../../app/utils/byuingItemsUser";
 import storeAccount from "../../../store/storeAccount";
+import { observer } from "mobx-react-lite";
+import { DollarOutlined as AntIcons } from "@ant-design/icons";
+import DollarOutlined from "../../UI/Icons/DollarOutlined";
+import GroupOutlined from "../../UI/Icons/GroupOutlined";
+import { toJS } from "mobx";
 
 const ListCardsInProfile: React.FC<{
   selectMenuItemForProfile: "likes" | "basket" | "buying";
-}> = (props) => {
+}> = observer((props) => {
   const filterUserCard = storeAccount.user[props.selectMenuItemForProfile];
-  const likeItem = (item: ICardInfo) => {
-    const add = "Liked";
-    const deleted = "Unliked";
-    const category = "Liked";
-    statusItemChanger(item, add, deleted);
-  };
-  const buyingItem = (item: ICardInfo) => {
-    const add = "Basket";
-    const deleted = "Delete from you basket";
-    const category = "Basket";
-    statusItemChanger(item, add, deleted);
-  };
-  const updateBuying = (item: ICardInfo) => {
-    const category = "Basket";
-    const deleted = "Delete from you basket";
-    statusItemChanger(item, category, deleted);
-  };
-  const byuingItemsUser = () => {};
 
   return (
     <div>
@@ -46,15 +34,26 @@ const ListCardsInProfile: React.FC<{
               hoverable
               style={{ width: 300 }}
               actions={[
-                <Button id={item.id} type="text" onClick={() => likeItem(item)}>
+                <Button
+                  id={item.id}
+                  type="text"
+                  onClick={() => statusItemChanger(item, "liked")}
+                >
                   <MinusOutlined key={`minuse ${item.id}`} />
                 </Button>,
                 <Button
                   id={item.id}
                   type="text"
-                  onClick={() => buyingItem(item)}
+                  onClick={() => statusItemChanger(item, "basket")}
                 >
-                  <ShoppingOutlined key={`basket ${item.id}`} />
+                  <GroupOutlined key={`basket ${item.id}`} />
+                </Button>,
+                <Button
+                  id={item.id}
+                  type="text"
+                  onClick={() => byuingItemsUser(item, "buying")}
+                >
+                  <DollarOutlined key={`buying ${item.id}`} />
                 </Button>,
               ]}
             >
@@ -66,5 +65,5 @@ const ListCardsInProfile: React.FC<{
       </Row>
     </div>
   );
-};
+});
 export default ListCardsInProfile;

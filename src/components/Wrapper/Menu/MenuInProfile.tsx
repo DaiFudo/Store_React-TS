@@ -8,12 +8,13 @@ import "antd/dist/antd.css";
 import { useLocation } from "react-router-dom";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
+import { observer } from "mobx-react-lite";
 
 interface MenuListProfile {
   setSelectMenuItemForProfile: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const MenuListForProfile: React.FC<MenuListProfile> = (props) => {
+const MenuListForProfile: React.FC<MenuListProfile> = observer((props) => {
   return (
     <Row justify="start">
       <Col>
@@ -34,5 +35,5 @@ const MenuListForProfile: React.FC<MenuListProfile> = (props) => {
       </Col>
     </Row>
   );
-};
+});
 export default MenuListForProfile;
