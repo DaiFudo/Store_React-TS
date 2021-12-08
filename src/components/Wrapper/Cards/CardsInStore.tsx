@@ -17,7 +17,6 @@ import store from "../../../store/store";
 
 const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
   const filterCards = store.products.devices[selectMenuItem];
-  console.log(toJS(storeAccount.user.admin));
 
   return (
     <div>

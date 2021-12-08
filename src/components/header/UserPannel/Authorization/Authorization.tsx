@@ -24,11 +24,26 @@ const Authorization = () => {
   };
 
   const regOn = () => {
-    return (
-      <Button type="primary" onClick={logOut}>
-        Exit
-      </Button>
-    );
+    if (storeAccount.user.admin) {
+      return (
+        <>
+          <Button type="primary" onClick={() => navigate("/admin")}>
+            admin
+          </Button>
+          <Button type="primary" onClick={logOut}>
+            Exit
+          </Button>
+        </>
+      );
+    } else {
+      return (
+        <div>
+          <Button type="primary" onClick={logOut}>
+            Exit
+          </Button>
+        </div>
+      );
+    }
   };
   const regOff = () => {
     return (

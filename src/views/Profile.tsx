@@ -8,8 +8,9 @@ import storeAccount from "../store/storeAccount";
 const Auth: React.FC = () => {
   const navigate = useNavigate();
   if (!storeAccount.user) {
-    navigate("/");
+    navigate("/", { replace: true });
   }
+
   return (
     <>
       <Header />
