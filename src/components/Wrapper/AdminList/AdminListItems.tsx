@@ -8,32 +8,35 @@ import { Space, Typography } from "antd";
 import pagination from "antd/lib/pagination";
 import storeAccount from "../../../store/storeAccount";
 import IUser from "../../../store/interface/interfaceUsers";
+import ICardInfo from "../../../store/interface/interfaceCard";
 const AdminListItems = observer(() => {
-  const storeUser = store.users;
+  const [usersData, setUsersData] = useState(toJS(store.users));
 
-  const [oldData, setnewData] = useState(toJS(storeUser));
+  useEffect(() => {
+    setUsersData(toJS(store.users));
+  }, [store.users]);
 
   const deleteAccount = (items: IUser) => {
-    const indexUser = storeUser.findIndex(
+    const indexUser = usersData.findIndex(
       (userStore: any) => userStore === items
     );
-    storeUser.splice(indexUser, 1);
-    setnewData(storeUser);
-    store.setUsers(storeUser);
+    usersData.splice(indexUser, 1);
+    store.setUsers(usersData);
   };
 
   const updaterBanAccount = (items: IUser) => {
-    const indexUser = storeUser.findIndex(
+    const indexUser = usersData.findIndex(
       (userStore: any) => userStore === items
     );
-    const itemFinder = storeUser.find((user: IUser) => items.id === user.id);
+    const itemFinder = usersData.find((user: IUser) => items.id === user.id);
     itemFinder!.banned = !itemFinder!.banned;
-    storeUser.splice(indexUser, 1, itemFinder!);
-    console.log(toJS(storeUser));
-    store.setUsers(storeUser);
+    usersData.splice(indexUser, 1, itemFinder!);
+    store.setUsers(usersData);
   };
-
-  const columns = [
+  const deleteDevices = (items: any) => {
+    console.log(items);
+  };
+  const usersColumns = [
     {
       title: "Nickname",
       dataIndex: "nickname",
@@ -68,15 +71,52 @@ const AdminListItems = observer(() => {
       ),
     },
   ];
+  const allItemsDevices = [];
+  const allitemss = toJS(store.products.devices);
+  for (let items in allitemss) {
+    for (let fullListItems of allitemss[items]) {
+      allItemsDevices.push(fullListItems);
+    }
+  }
 
-  function onChange(sorter: any, pagination: any) {}
+  const devicesColumns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      sorter: (a: any, b: any) => a.price - b.price,
+    },
+    {
+      title: "Id",
+      dataIndex: "id",
+      key: "id",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (item: any) => (
+        <>
+          <Space>
+            <Typography.Link onClick={() => deleteDevices(item)}>
+              Delete
+            </Typography.Link>
+          </Space>
+        </>
+      ),
+    },
+  ];
+
   return (
     <div>
       <Table
         key={storeAccount.user.id}
-        dataSource={oldData}
-        columns={columns}
-        onChange={onChange}
+        dataSource={allItemsDevices}
+        columns={devicesColumns}
       />
     </div>
   );
