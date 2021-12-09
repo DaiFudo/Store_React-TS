@@ -18,16 +18,8 @@ const MenuInAdminPannel: React.FC = (props) => {
           mode="inline"
         >
           <Menu.Item key="create">CreateMode</Menu.Item>
-          <Menu.Item key="Users">Users</Menu.Item>
-
-          <SubMenu key="devices" title="Devices">
-            <Menu.Item key="mouses">Mouses</Menu.Item>
-            <Menu.Item key="keyboards">Keyboards</Menu.Item>
-            <Menu.Item key="headphones">Headphones</Menu.Item>
-          </SubMenu>
-          <SubMenu key="Components" title="Components">
-            <Menu.Item key="cpu">CPU</Menu.Item>
-          </SubMenu>
+          <Menu.Item key="users">Users</Menu.Item>
+          <Menu.Item key="devices">Devices</Menu.Item>
         </Menu>
       </Col>
     </Row>

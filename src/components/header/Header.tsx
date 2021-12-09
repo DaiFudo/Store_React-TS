@@ -15,7 +15,7 @@ const Header: React.FC = observer(() => {
   let navigate = useNavigate();
 
   const ChangerUserPannel = () => {
-    if (location.pathname == "/profile") {
+    if (location.pathname == "/profile" || location.pathname == "/admin") {
       return <></>;
     } else {
       return <UserPannel />;

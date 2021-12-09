@@ -4,6 +4,7 @@ import ModalForms from "./ModalForm/ModalForm";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import storeAccount from "../../../../store/storeAccount";
+import { Space } from "antd";
 const Authorization = () => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -26,14 +27,14 @@ const Authorization = () => {
   const regOn = () => {
     if (storeAccount.user.admin) {
       return (
-        <>
+        <Space>
           <Button type="primary" onClick={() => navigate("/admin")}>
-            admin
+            Admin
           </Button>
           <Button type="primary" onClick={logOut}>
             Exit
           </Button>
-        </>
+        </Space>
       );
     } else {
       return (

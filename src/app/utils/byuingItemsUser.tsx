@@ -10,11 +10,14 @@ import StoreAccount from "../../store/storeAccount";
 import warn from "./warn";
 
 const byuingItemsUser = (item: ICardInfo, category: string) => {
-  if (StoreAccount.user.money <= item.price) {
+  let userMoney = StoreAccount.user.money;
+  if (userMoney <= item.price) {
+    message.warning(`Need more money: ${userMoney - item.price}$`);
     return false;
   } else {
     StoreAccount.updateMoney(StoreAccount.user.money - item.price);
     StoreAccount.updateBuying(item);
+    message.success(`Buying item: ${item.name}$, check you basket:)`);
   }
 };
 

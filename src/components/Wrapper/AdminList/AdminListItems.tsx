@@ -35,7 +35,23 @@ const AdminListItems = observer(() => {
   };
   const deleteDevices = (items: any) => {
     console.log(items);
+    const all: ICardInfo = store.products.devices;
+    const asd = Object.entries(all!).forEach(([key, value]) => {
+      for (let allItems of value) {
+        if (allItems.name === items.name) {
+          const indexItem = all[key].findIndex(
+            (item: any) => item.name === items.name
+          );
+          //const newCategoryDevices = all[key].splice(indexItem, 1);
+          // console.log("newCategoryDevices:", toJS(newCategoryDevices));
+        }
+
+        console.log(toJS(all[key]), toJS(key));
+      }
+      //.find((item:any)=>item.name ===items.name)
+    });
   };
+
   const usersColumns = [
     {
       title: "Nickname",
@@ -99,7 +115,7 @@ const AdminListItems = observer(() => {
     {
       title: "Action",
       key: "action",
-      render: (item: any) => (
+      render: (item: ICardInfo) => (
         <>
           <Space>
             <Typography.Link onClick={() => deleteDevices(item)}>
