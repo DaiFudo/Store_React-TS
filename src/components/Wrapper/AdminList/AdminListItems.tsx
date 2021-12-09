@@ -1,5 +1,5 @@
 import Table from "antd/lib/table/Table";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import store from "../../../store/store";
 import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
@@ -9,16 +9,28 @@ import pagination from "antd/lib/pagination";
 import storeAccount from "../../../store/storeAccount";
 import IUser from "../../../store/interface/interfaceUsers";
 const AdminListItems = observer(() => {
-  console.log(toJS(store.users));
   const storeUser = store.users;
+
+  const [oldData, setnewData] = useState(toJS(storeUser));
+
+  const deleteAccount = (items: IUser) => {
+    const indexUser = storeUser.findIndex(
+      (userStore: any) => userStore === items
+    );
+    storeUser.splice(indexUser, 1);
+    setnewData(storeUser);
+    store.setUsers(storeUser);
+  };
+
   const updaterBanAccount = (items: IUser) => {
     const indexUser = storeUser.findIndex(
       (userStore: any) => userStore === items
     );
-    console.log("indexUser", indexUser);
-
-    const item = storeUser.find((user: IUser) => items.id === user.id);
-    console.log(toJS((item!.banned = item!.banned = true ? false : true)));
+    const itemFinder = storeUser.find((user: IUser) => items.id === user.id);
+    itemFinder!.banned = !itemFinder!.banned;
+    storeUser.splice(indexUser, 1, itemFinder!);
+    console.log(toJS(storeUser));
+    store.setUsers(storeUser);
   };
 
   const columns = [
@@ -45,7 +57,7 @@ const AdminListItems = observer(() => {
       render: (item: any) => (
         <>
           <Space>
-            <Typography.Link onClick={() => console.log("delete", toJS(item))}>
+            <Typography.Link onClick={() => deleteAccount(item)}>
               Delete
             </Typography.Link>
             <Typography.Link onClick={() => updaterBanAccount(item)}>
@@ -57,14 +69,12 @@ const AdminListItems = observer(() => {
     },
   ];
 
-  function onChange(sorter: any, pagination: any) {
-    console.log("params", sorter, pagination);
-  }
+  function onChange(sorter: any, pagination: any) {}
   return (
     <div>
       <Table
         key={storeAccount.user.id}
-        dataSource={store.users}
+        dataSource={oldData}
         columns={columns}
         onChange={onChange}
       />

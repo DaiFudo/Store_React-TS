@@ -17,11 +17,9 @@ const MenuInAdminPannel: React.FC = (props) => {
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          <SubMenu key="peoples" title="Users">
-            <Menu.Item key="Users">Users</Menu.Item>
-            <Menu.Item key="Admins">Admins</Menu.Item>
-            <Menu.Item key="Banned">Banned</Menu.Item>
-          </SubMenu>
+          <Menu.Item key="create">CreateMode</Menu.Item>
+          <Menu.Item key="Users">Users</Menu.Item>
+
           <SubMenu key="devices" title="Devices">
             <Menu.Item key="mouses">Mouses</Menu.Item>
             <Menu.Item key="keyboards">Keyboards</Menu.Item>
@@ -30,7 +28,6 @@ const MenuInAdminPannel: React.FC = (props) => {
           <SubMenu key="Components" title="Components">
             <Menu.Item key="cpu">CPU</Menu.Item>
           </SubMenu>
-          <Menu.Item key="create">CreateMode</Menu.Item>
         </Menu>
       </Col>
     </Row>
