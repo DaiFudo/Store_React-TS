@@ -7,13 +7,9 @@ import { toJS } from "mobx";
 import StoreAccount from "../../store/storeAccount";
 import warn from "./warn";
 
-interface IUasdr {
-  [index: string]: string;
-}
-
 const statusItemChanger = (item: ICardInfo, category: string) => {
   if (StoreAccount.user) {
-    if (category == "liked") {
+    if (category === "liked") {
       const allItems = StoreAccount.user.likes.map((item: ICardInfo) =>
         toJS(item)
       );
