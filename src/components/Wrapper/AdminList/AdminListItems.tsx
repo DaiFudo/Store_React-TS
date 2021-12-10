@@ -6,11 +6,13 @@ import { observer } from "mobx-react-lite";
 import Column from "antd/lib/table/Column";
 import {
   Cascader,
+  Form,
   Input,
   InputNumber,
   Radio,
   Select,
   Space,
+  Switch,
   TreeSelect,
   Typography,
 } from "antd";
@@ -18,8 +20,8 @@ import pagination from "antd/lib/pagination";
 import storeAccount from "../../../store/storeAccount";
 import IUser from "../../../store/interface/interfaceUsers";
 import ICardInfo from "../../../store/interface/interfaceCard";
-import Form from "antd/lib/form/Form";
 import Button from "../../UI/Button/Button";
+import { uid } from "uid";
 const AdminListItems = observer(() => {
   const [usersData, setUsersData] = useState(toJS(store.users));
 
@@ -53,15 +55,36 @@ const AdminListItems = observer(() => {
           const indexItem = all[key].findIndex(
             (item: any) => item.name === items.name
           );
-          //const newCategoryDevices = all[key].splice(indexItem, 1);
-          // console.log("newCategoryDevices:", toJS(newCategoryDevices));
         }
 
         console.log(toJS(all[key]), toJS(key));
       }
-      //.find((item:any)=>item.name ===items.name)
     });
   };
+
+  const allItemsDevices = [];
+  const allitemss = toJS(store.products.devices);
+  for (let items in allitemss) {
+    for (let fullListItems of allitemss[items]) {
+      allItemsDevices.push(fullListItems);
+    }
+  }
+  function onFinish(values: any) {
+    let id = uid();
+    const formValues = { ...values, id };
+    console.log("is formValues", formValues);
+    let keyCategory = formValues.category;
+    console.log("keyCategory:", keyCategory);
+    if (keyCategory === "mouses") {
+      store.setMouses(formValues);
+    } else if (keyCategory === "keyboards") {
+      store.setKeyboards(formValues);
+    } else if (keyCategory === "cpu") {
+      store.setCpu(formValues);
+    } else if (keyCategory === "headphones") {
+      store.setHeadphones(formValues);
+    }
+  }
 
   const usersColumns = [
     {
@@ -98,13 +121,6 @@ const AdminListItems = observer(() => {
       ),
     },
   ];
-  const allItemsDevices = [];
-  const allitemss = toJS(store.products.devices);
-  for (let items in allitemss) {
-    for (let fullListItems of allitemss[items]) {
-      allItemsDevices.push(fullListItems);
-    }
-  }
 
   const devicesColumns = [
     {
@@ -137,64 +153,45 @@ const AdminListItems = observer(() => {
       ),
     },
   ];
-  function onChange(value: any) {
-    console.log("changed", value);
-  }
-  type SizeType = Parameters<typeof Form>[0]["size"];
-  function handleChange(value: any) {
-    console.log(`selected ${value}`);
-  }
-  const { Option, OptGroup } = Select;
+
   return (
     <div>
-      <Form>
-        <Space>
-          <Input placeholder="Name" />
-          <Input placeholder="URL Image" />
-          <Select
-            defaultValue="CPU"
-            style={{ width: 200 }}
-            onChange={handleChange}
-          >
-            <OptGroup label="devices">
-              <Option value="mouses">Mouse</Option>
-              <Option value="keyboards">Keyboard</Option>
-              <Option value="headphones">Headphones</Option>
-            </OptGroup>
-            <OptGroup label="Components">
-              <Option value="cpu">CPU</Option>
-            </OptGroup>
+      {/* <Form
+        labelCol={{ span: 4 }}
+        wrapperCol={{ span: 14 }}
+        layout="horizontal"
+        onFinish={onFinish}
+      >
+        <Form.Item shouldUpdate name="name" label="Name item:">
+          <Input />
+        </Form.Item>
+        <Form.Item name="url" label="URL image:">
+          <Input />
+        </Form.Item>
+        <Form.Item name="category" label="Category:">
+          <Select>
+            <Select.Option value="mouses">Mouses</Select.Option>
+            <Select.Option value="keyboards">Keyboards</Select.Option>
+            <Select.Option value="headphones">Headphones</Select.Option>
+            <Select.Option value="cpu">CPU</Select.Option>
           </Select>
-          <div>
-            Price:
-            <InputNumber<number>
-              formatter={(value) =>
-                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              }
-              parser={(value) => Number(value?.replace(/\$\s?|(,*)/g, ""))}
-              controls={false}
-              onChange={onChange}
-            />
-          </div>
-          <div>
-            Promotion?:
-            <InputNumber<number> // промотион
-              formatter={(value) =>
-                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              }
-              parser={(value) => Number(value?.replace(/\$\s?|(,*)/g, ""))}
-              controls={false}
-              defaultValue={0}
-              onChange={onChange}
-            />
-          </div>
-        </Space>
-      </Form>
-      {/* <Table
+        </Form.Item>
+
+        <Form.Item name="price" label="Price">
+          <InputNumber controls={false} addonAfter="$" />
+        </Form.Item>
+        <Form.Item name="promotion" label="Promotion">
+          <InputNumber controls={false} addonAfter="$" />
+        </Form.Item>
+        <Form.Item label="Button">
+          <Button htmlType="submit">Button</Button>
+        </Form.Item>
+      </Form> */}
+      <Table
         key={storeAccount.user.id}
         dataSource={allItemsDevices}
         columns={devicesColumns}
-      /> */}
+      />
     </div>
   );
 });

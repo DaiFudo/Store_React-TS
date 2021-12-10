@@ -13,6 +13,7 @@ import { toJS } from "mobx";
 const ModalForm: React.FC = () => {
   const onFinish = (values: IUser) => {
     const nameFromInput = values.nickname;
+    console.log(values);
 
     const findNick = () => {
       const userInStore = Store.users!.find(

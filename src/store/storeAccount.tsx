@@ -13,7 +13,6 @@ class StoreAccount {
   handleAccount(user: IUser) {
     this.user = user;
   }
-
   updateLike(user: ICardInfo) {
     console.log(toJS(user), "StoreAccount");
     this.user.likes = [...(this.user!.likes ?? []), user];

@@ -5,13 +5,21 @@ import "antd/dist/antd.css";
 import { useLocation } from "react-router-dom";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
-const { SubMenu } = Menu;
 
-const MenuInAdminPannel: React.FC = (props) => {
+interface MenuInAdminPannel {
+  setSelectMenuItemForAdministration: React.Dispatch<
+    React.SetStateAction<string>
+  >;
+}
+
+const MenuInAdminPannel: React.FC<MenuInAdminPannel> = (props) => {
+  const { SubMenu } = Menu;
+
   return (
     <Row justify="start">
       <Col>
         <Menu
+          onClick={(e) => props.setSelectMenuItemForAdministration(e.key)}
           style={{ width: 230 }}
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}

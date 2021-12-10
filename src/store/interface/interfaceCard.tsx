@@ -1,5 +1,6 @@
 interface ICardInfo {
   [x: string]: any;
+  category: string;
   selectMenuItem: string;
   selectMenuItemForProfile?: string;
   price: number;

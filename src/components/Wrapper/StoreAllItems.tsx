@@ -20,6 +20,7 @@ const StoreAllItems: React.FC = observer(() => {
           id={""}
           title={""}
           descr={""}
+          category={""}
         />
       </Col>
     </Row>
