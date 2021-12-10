@@ -4,11 +4,22 @@ import store from "../../../store/store";
 import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
 import Column from "antd/lib/table/Column";
-import { Space, Typography } from "antd";
+import {
+  Cascader,
+  Input,
+  InputNumber,
+  Radio,
+  Select,
+  Space,
+  TreeSelect,
+  Typography,
+} from "antd";
 import pagination from "antd/lib/pagination";
 import storeAccount from "../../../store/storeAccount";
 import IUser from "../../../store/interface/interfaceUsers";
 import ICardInfo from "../../../store/interface/interfaceCard";
+import Form from "antd/lib/form/Form";
+import Button from "../../UI/Button/Button";
 const AdminListItems = observer(() => {
   const [usersData, setUsersData] = useState(toJS(store.users));
 
@@ -126,14 +137,64 @@ const AdminListItems = observer(() => {
       ),
     },
   ];
-
+  function onChange(value: any) {
+    console.log("changed", value);
+  }
+  type SizeType = Parameters<typeof Form>[0]["size"];
+  function handleChange(value: any) {
+    console.log(`selected ${value}`);
+  }
+  const { Option, OptGroup } = Select;
   return (
     <div>
-      <Table
+      <Form>
+        <Space>
+          <Input placeholder="Name" />
+          <Input placeholder="URL Image" />
+          <Select
+            defaultValue="CPU"
+            style={{ width: 200 }}
+            onChange={handleChange}
+          >
+            <OptGroup label="devices">
+              <Option value="mouses">Mouse</Option>
+              <Option value="keyboards">Keyboard</Option>
+              <Option value="headphones">Headphones</Option>
+            </OptGroup>
+            <OptGroup label="Components">
+              <Option value="cpu">CPU</Option>
+            </OptGroup>
+          </Select>
+          <div>
+            Price:
+            <InputNumber<number>
+              formatter={(value) =>
+                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }
+              parser={(value) => Number(value?.replace(/\$\s?|(,*)/g, ""))}
+              controls={false}
+              onChange={onChange}
+            />
+          </div>
+          <div>
+            Promotion?:
+            <InputNumber<number> // промотион
+              formatter={(value) =>
+                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              }
+              parser={(value) => Number(value?.replace(/\$\s?|(,*)/g, ""))}
+              controls={false}
+              defaultValue={0}
+              onChange={onChange}
+            />
+          </div>
+        </Space>
+      </Form>
+      {/* <Table
         key={storeAccount.user.id}
         dataSource={allItemsDevices}
         columns={devicesColumns}
-      />
+      /> */}
     </div>
   );
 });
