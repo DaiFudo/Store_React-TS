@@ -26,6 +26,7 @@ import TFormInputs from "../../../store/types/TFormInputs";
 import IDevices from "../../../store/interface/interfaceDevices";
 const AdminListItems = observer(() => {
   const [usersData, setUsersData] = useState(toJS(store.users));
+  const [table, setTable] = useState<ICardInfo[]>([]);
 
   useEffect(() => {
     setUsersData(toJS(store.users));
@@ -54,20 +55,31 @@ const AdminListItems = observer(() => {
             (item: ICardInfo) => item.name === items.name
           );
           all[key].splice(indexItem, 1);
+          store.setDevices(all);
           console.log("after action", toJS(all));
-          return store.setProducts(all);
         }
       }
     });
+
+    console.log(toJS(store.products.devices));
+
+    a();
   };
 
-  const allItemsDevices: ICardInfo[] = [];
-  const allItems: ICardInfo = toJS(store.products.devices);
-  for (let items in allItems) {
-    for (let fullListItems of allItems[items]) {
-      allItemsDevices.push(fullListItems);
+  const a = () => {
+    const allItemsDevices: ICardInfo[] = [];
+    let allItems: ICardInfo = toJS(store.products.devices);
+    for (let items in allItems) {
+      for (let fullListItems of allItems[items]) {
+        allItemsDevices.push(fullListItems);
+        setTable(allItemsDevices);
+      }
     }
-  }
+  };
+  useEffect(() => {
+    a();
+  }, []);
+  console.log("is table", toJS(table), toJS(store.products.devices));
 
   function onFinish(values: TFormInputs) {
     let id = uid();
@@ -189,7 +201,7 @@ const AdminListItems = observer(() => {
       </Form> */}
       <Table
         key={storeAccount.user.id}
-        dataSource={allItemsDevices}
+        dataSource={table}
         columns={devicesColumns}
       />
     </div>

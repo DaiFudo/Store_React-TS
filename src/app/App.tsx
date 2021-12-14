@@ -19,11 +19,11 @@ handleUsers();
 handleProduct();
 
 const App: React.FC = () => {
-  let location = useLocation();
+  // let location = useLocation();
 
   return (
     <TransitionGroup component={null}>
-      <CSSTransition key={location.key} classNames="fade" timeout={300}>
+      <CSSTransition classNames="fade" timeout={300}>
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />

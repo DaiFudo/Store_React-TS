@@ -18,6 +18,10 @@ class Store {
     this.users = users;
     console.log(toJS(this));
   }
+  setDevices(devices: any) {
+    this.products.devices = devices;
+    console.log(toJS(this));
+  }
   setProducts(devices: IDevices) {
     this.products = devices;
     console.log(toJS(this));
