@@ -22,6 +22,8 @@ import IUser from "../../../store/interface/interfaceUsers";
 import ICardInfo from "../../../store/interface/interfaceCard";
 import Button from "../../UI/Button/Button";
 import { uid } from "uid";
+import TFormInputs from "../../../store/types/TFormInputs";
+import IDevices from "../../../store/interface/interfaceDevices";
 const AdminListItems = observer(() => {
   const [usersData, setUsersData] = useState(toJS(store.users));
 
@@ -30,46 +32,44 @@ const AdminListItems = observer(() => {
   }, [store.users]);
 
   const deleteAccount = (items: IUser) => {
-    const indexUser = usersData.findIndex(
-      (userStore: any) => userStore === items
-    );
+    const indexUser = usersData.findIndex((userStore) => userStore === items);
     usersData.splice(indexUser, 1);
     store.setUsers(usersData);
   };
 
   const updaterBanAccount = (items: IUser) => {
-    const indexUser = usersData.findIndex(
-      (userStore: any) => userStore === items
-    );
+    const indexUser = usersData.findIndex((userStore) => userStore === items);
     const itemFinder = usersData.find((user: IUser) => items.id === user.id);
     itemFinder!.banned = !itemFinder!.banned;
     usersData.splice(indexUser, 1, itemFinder!);
     store.setUsers(usersData);
   };
-  const deleteDevices = (items: any) => {
+  const deleteDevices = (items: ICardInfo) => {
     console.log(items);
-    const all: ICardInfo = store.products.devices;
-    const asd = Object.entries(all!).forEach(([key, value]) => {
+    const all: IDevices = JSON.parse(JSON.stringify(store.products.devices));
+    Object.entries(all!).forEach(([key, value]) => {
       for (let allItems of value) {
         if (allItems.name === items.name) {
-          const indexItem = all[key].findIndex(
-            (item: any) => item.name === items.name
+          const indexItem: ICardInfo = all[key].findIndex(
+            (item: ICardInfo) => item.name === items.name
           );
+          all[key].splice(indexItem, 1);
+          console.log("after action", toJS(all));
+          return store.setProducts(all);
         }
-
-        console.log(toJS(all[key]), toJS(key));
       }
     });
   };
 
-  const allItemsDevices = [];
-  const allitemss = toJS(store.products.devices);
-  for (let items in allitemss) {
-    for (let fullListItems of allitemss[items]) {
+  const allItemsDevices: ICardInfo[] = [];
+  const allItems: ICardInfo = toJS(store.products.devices);
+  for (let items in allItems) {
+    for (let fullListItems of allItems[items]) {
       allItemsDevices.push(fullListItems);
     }
   }
-  function onFinish(values: any) {
+
+  function onFinish(values: TFormInputs) {
     let id = uid();
     const formValues = { ...values, id };
     console.log("is formValues", formValues);
@@ -96,7 +96,7 @@ const AdminListItems = observer(() => {
       title: "Money",
       dataIndex: "money",
       key: "money",
-      sorter: (a: any, b: any) => a.money - b.money,
+      sorter: (a: ICardInfo, b: ICardInfo) => a.money - b.money,
     },
     {
       title: "Id",
@@ -107,7 +107,7 @@ const AdminListItems = observer(() => {
       title: "Action",
       key: "action",
 
-      render: (item: any) => (
+      render: (item: IUser) => (
         <>
           <Space>
             <Typography.Link onClick={() => deleteAccount(item)}>
@@ -132,7 +132,7 @@ const AdminListItems = observer(() => {
       title: "Price",
       dataIndex: "price",
       key: "price",
-      sorter: (a: any, b: any) => a.price - b.price,
+      sorter: (a: ICardInfo, b: ICardInfo) => a.price - b.price,
     },
     {
       title: "Id",

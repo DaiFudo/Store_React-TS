@@ -1,13 +1,3 @@
-/* 
-//import  * as AntIcons  from "@ant-design/icons";
- import { IconContextProps } from "@ant-design/icons/lib/components/Context";
-import { FC } from "react";
-const {SubAppstoreOutlined} = AppstoreOutlined;
-
- const createIcon = Component: React.Component<any> = (props) => {
-  return(<div><Component/></div> )
-}; 
- */
 import {
   AppstoreOutlined,
   HeartOutlined,
@@ -34,12 +24,3 @@ export const AntIcon: React.FC<Props> = (props) => {
   const { Icon } = props;
   return <Icon />;
 };
-
-/* const Icons: React.FC<IconContextProps> = props =>{
-  const {Icon} = props
-  return(
-    <IconContainer {...props}>
-      <Icon/>
-    </IconContainer>
-  )
-} */

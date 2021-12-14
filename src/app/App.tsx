@@ -1,7 +1,12 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  Routes,
+  BrowserRouter as Router,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Admin from "../views/Admin";
 import Profile from "../views/Profile";
 import Main from "../views/Main";
@@ -14,11 +19,11 @@ handleUsers();
 handleProduct();
 
 const App: React.FC = () => {
-  // let location = useLocation();
+  let location = useLocation();
 
   return (
     <TransitionGroup component={null}>
-      <CSSTransition classNames="fade" timeout={300}>
+      <CSSTransition key={location.key} classNames="fade" timeout={300}>
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
