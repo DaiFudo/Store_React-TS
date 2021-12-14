@@ -1,19 +1,17 @@
-import "antd/dist/antd.css";
-import Row from "../../UI/Grid/Row/Row";
-import { toJS } from "mobx";
-
+import store from "../../../store/store";
 import ICardInfo from "../../../store/interface/interfaceCard";
+
+import statusItemChanger from "../../../app/utils/statusItemChanger";
+
+import { Image, Rate, Skeleton } from "antd";
+import Meta from "antd/lib/card/Meta";
+
 import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
 import PlusOutlined from "../../UI/Icons/PlusOutlined";
 import ShoppingOutlined from "../../UI/Icons/ShoppingOutlined";
-import Meta from "antd/lib/card/Meta";
 import Col from "../../UI/Grid/Col/Col";
-import { Image, message, Rate, Skeleton } from "antd";
-import statusItemChanger from "../../../app/utils/statusItemChanger";
-
-import storeAccount from "../../../store/storeAccount";
-import store from "../../../store/store";
+import Row from "../../UI/Grid/Row/Row";
 
 const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
   const filterCards = store.products.devices[selectMenuItem];

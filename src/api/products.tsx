@@ -1,9 +1,7 @@
-import productsData from "../database/store.json";
-
 import Store from "../store/store";
-import IAll from "../store/interface/interfaceProducts";
-import ICardInfo from "../store/interface/interfaceCard";
 import IDevices from "../store/interface/interfaceDevices";
+
+import productsData from "../database/store.json";
 
 export const handleProduct = async () => {
   const ProductsData: IDevices = JSON.parse(

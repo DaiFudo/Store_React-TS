@@ -1,29 +1,17 @@
-import Table from "antd/lib/table/Table";
-import React, { useCallback, useEffect, useState } from "react";
-import store from "../../../store/store";
+import React, { useEffect, useState } from "react";
+import { uid } from "uid";
 import { toJS } from "mobx";
 import { observer } from "mobx-react-lite";
-import Column from "antd/lib/table/Column";
-import {
-  Cascader,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Select,
-  Space,
-  Switch,
-  TreeSelect,
-  Typography,
-} from "antd";
-import pagination from "antd/lib/pagination";
+import store from "../../../store/store";
+
+import { Space, Typography } from "antd";
+import Table from "antd/lib/table/Table";
 import storeAccount from "../../../store/storeAccount";
 import IUser from "../../../store/interface/interfaceUsers";
 import ICardInfo from "../../../store/interface/interfaceCard";
-import Button from "../../UI/Button/Button";
-import { uid } from "uid";
 import TFormInputs from "../../../store/types/TFormInputs";
 import IDevices from "../../../store/interface/interfaceDevices";
+
 const AdminListItems = observer(() => {
   const [usersData, setUsersData] = useState(toJS(store.users));
   const [table, setTable] = useState<ICardInfo[]>([]);

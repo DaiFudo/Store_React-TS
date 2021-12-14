@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Store from "../../../../../store/store";
 import StoreAccount from "../../../../../store/storeAccount";
-import { useNavigate } from "react-router-dom";
+
+import IUser from "../../../../../store/interface/interfaceUsers";
 
 import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import Button from "../../../../UI/Button/Button";
-import IUser from "../../../../../store/interface/interfaceUsers";
-import { toJS } from "mobx";
 
 const ModalForm: React.FC = () => {
   const onFinish = (values: IUser) => {

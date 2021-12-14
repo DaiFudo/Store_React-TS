@@ -1,13 +1,9 @@
 import { Menu } from "antd";
-import { toJS } from "mobx";
-import Store from "../../../store/store";
 
-//import { Menu } from "../../UI/Menu/Menu"; KAK?
-import "antd/dist/antd.css";
-import { useLocation } from "react-router-dom";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
-const { SubMenu } = Menu; // KAK?
+
+const { SubMenu } = Menu;
 
 interface MenuList {
   setSelectMenuItem: React.Dispatch<React.SetStateAction<string>>;

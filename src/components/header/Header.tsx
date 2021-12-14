@@ -2,20 +2,20 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
-import "antd/dist/antd.css";
 import "./styles.css";
-import UserPannel from "./UserPannel/UserPannel";
 import PageHeader from "../UI/PageHeader/PageHeader";
 import Row from "../UI/Grid/Row/Row";
 import Col from "../UI/Grid/Col/Col";
+
 import UserName from "../../app/utils/UserName";
+import UserPannel from "./UserPannel/UserPannel";
 
 const Header: React.FC = observer(() => {
   const location = useLocation();
   let navigate = useNavigate();
 
   const ChangerUserPannel = () => {
-    if (location.pathname == "/profile" || location.pathname == "/admin") {
+    if (location.pathname === "/profile" || location.pathname === "/admin") {
       return <></>;
     } else {
       return <UserPannel />;

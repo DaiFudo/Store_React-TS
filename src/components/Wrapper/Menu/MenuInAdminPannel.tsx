@@ -1,8 +1,5 @@
 import { Menu } from "antd";
-import { toJS } from "mobx";
-import Store from "../../../store/store";
-import "antd/dist/antd.css";
-import { useLocation } from "react-router-dom";
+
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
 
@@ -13,8 +10,6 @@ interface MenuInAdminPannel {
 }
 
 const MenuInAdminPannel: React.FC<MenuInAdminPannel> = (props) => {
-  const { SubMenu } = Menu;
-
   return (
     <Row justify="start">
       <Col>

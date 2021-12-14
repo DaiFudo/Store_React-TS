@@ -1,10 +1,13 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { Space } from "antd";
 import Modal from "../../../UI/Modal/Modal";
 import Button from "../../../UI/Button/Button";
 import ModalForms from "./ModalForm/ModalForm";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import storeAccount from "../../../../store/storeAccount";
-import { Space } from "antd";
+
 const Authorization = () => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);

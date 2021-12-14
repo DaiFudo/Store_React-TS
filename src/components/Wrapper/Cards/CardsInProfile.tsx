@@ -1,23 +1,18 @@
-import "antd/dist/antd.css";
-import Row from "../../UI/Grid/Row/Row";
-import { Image, message } from "antd";
-//import renderListCardsProfile from "./filterCards/filterCardsProfile";
+import { observer } from "mobx-react-lite";
 import ICardInfo from "../../../store/interface/interfaceCard";
-import IUser from "../../../store/interface/interfaceUsers";
+
+import { Image } from "antd";
+import Row from "../../UI/Grid/Row/Row";
 import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
-import { ShoppingOutlined } from "../../UI/Icons/ShoppingOutlined";
 import MinusOutlined from "../../UI/Icons/MinusOutlined";
 import Meta from "antd/lib/card/Meta";
 import Col from "../../UI/Grid/Col/Col";
 import statusItemChanger from "../../../app/utils/statusItemChanger";
 import byuingItemsUser from "../../../app/utils/byuingItemsUser";
 import storeAccount from "../../../store/storeAccount";
-import { observer } from "mobx-react-lite";
-import { DollarOutlined as AntIcons } from "@ant-design/icons";
 import DollarOutlined from "../../UI/Icons/DollarOutlined";
 import GroupOutlined from "../../UI/Icons/GroupOutlined";
-import { toJS } from "mobx";
 
 const ListCardsInProfile: React.FC<{
   selectMenuItemForProfile: "likes" | "basket" | "buying";

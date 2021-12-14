@@ -1,5 +1,3 @@
-import React from "react";
-import { toJS } from "mobx";
 import storeAccount from "../../store/storeAccount";
 
 const UserName = () => {

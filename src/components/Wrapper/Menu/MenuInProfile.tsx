@@ -1,14 +1,9 @@
-import { Menu } from "antd";
-import { toJS } from "mobx";
-import Store from "../../../store/store";
-
-//import { Menu } from "../../UI/Menu/Menu"; KAK?
+import { observer } from "mobx-react-lite";
 import StoreAccount from "../../../store/storeAccount";
-import "antd/dist/antd.css";
-import { useLocation } from "react-router-dom";
+
+import { Menu } from "antd";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
-import { observer } from "mobx-react-lite";
 
 interface MenuListProfile {
   setSelectMenuItemForProfile: React.Dispatch<React.SetStateAction<string>>;

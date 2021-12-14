@@ -1,10 +1,12 @@
 /* Показывает уведомление о подписке/добавление в корзину на  
  основной странице и добавляет/удаляет элемент в localStorage */
+import { toJS } from "mobx";
 
 import { message } from "antd";
+
 import ICardInfo from "../../store/interface/interfaceCard";
-import { toJS } from "mobx";
 import StoreAccount from "../../store/storeAccount";
+
 import warn from "./warn";
 
 const statusItemChanger = (item: ICardInfo, category: string) => {
@@ -14,7 +16,7 @@ const statusItemChanger = (item: ICardInfo, category: string) => {
         toJS(item)
       );
       const numberDeletedItem: number = allItems.findIndex(
-        (itemFinder) => itemFinder.name == item.name
+        (itemFinder) => itemFinder.name === item.name
       );
       const names = StoreAccount.user.likes.map((item: ICardInfo) =>
         toJS(item.name)
@@ -35,7 +37,7 @@ const statusItemChanger = (item: ICardInfo, category: string) => {
         toJS(item)
       );
       const numberDeletedItem: number = allItems.findIndex(
-        (itemFinder) => itemFinder.name == item.name
+        (itemFinder) => itemFinder.name === item.name
       );
       const names = StoreAccount.user.basket.map((item: ICardInfo) =>
         toJS(item.name)

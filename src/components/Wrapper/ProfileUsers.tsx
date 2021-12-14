@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { observer } from "mobx-react-lite";
 import StoreAccount from "../../store/storeAccount";
 
 import Col from "../UI/Grid/Col/Col";
 import Row from "../UI/Grid/Row/Row";
+
 import MenuListForProfile from "./Menu/MenuInProfile";
 import ListCardsInProfile from "./Cards/CardsInProfile";
-import { observer } from "mobx-react-lite";
 
 const ProfileUserItems: React.FC = observer(() => {
   let navigate = useNavigate();
