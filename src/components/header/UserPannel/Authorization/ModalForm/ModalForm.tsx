@@ -5,14 +5,14 @@ import StoreAccount from "../../../../../store/storeAccount";
 
 import IUser from "../../../../../store/interface/interfaceUsers";
 
-import { Form, Input } from "antd";
+import { Form } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import Button from "../../../../UI/Button/Button";
+import Input from "../../../../UI/Input/Input";
 
 const ModalForm: React.FC = () => {
   const onFinish = (values: IUser) => {
     const nameFromInput = values.nickname;
-    console.log(values);
 
     const findNick = () => {
       const userInStore = Store.users!.find(
@@ -23,7 +23,6 @@ const ModalForm: React.FC = () => {
     findNick();
   };
   const onFinishFailed = (errorInfo: any) => {
-    // ANY
     console.log("Failed:", errorInfo);
   };
 

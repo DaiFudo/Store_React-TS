@@ -1,5 +1,3 @@
-/* export type IUsers = Array<IUser>; */
-
 import ICardInfo from "./interfaceCard";
 
 interface IDevices {

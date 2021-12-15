@@ -20,7 +20,7 @@ const MenuInAdminPannel: React.FC<MenuInAdminPannel> = (props) => {
           defaultOpenKeys={["sub1"]}
           mode="inline"
         >
-          <Menu.Item key="create">CreateMode</Menu.Item>
+          <Menu.Item key="createmod">CreateMode</Menu.Item>
           <Menu.Item key="users">Users</Menu.Item>
           <Menu.Item key="devices">Devices</Menu.Item>
         </Menu>

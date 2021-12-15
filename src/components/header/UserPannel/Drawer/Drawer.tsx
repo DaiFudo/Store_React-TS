@@ -5,10 +5,10 @@ import storeAccount from "../../../../store/storeAccount";
 
 import warn from "../../../../app/utils/warn";
 
-import { Drawer } from "antd";
 import Button from "../../../UI/Button/Button";
 import HeartOutlined from "../../../UI/Icons/HeartOutlined";
 import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
+import Drawer from "../../../UI/Drawer/Drawer";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);

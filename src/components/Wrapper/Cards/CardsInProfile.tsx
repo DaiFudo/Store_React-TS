@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import ICardInfo from "../../../store/interface/interfaceCard";
 
-import { Image } from "antd";
+import Image from "../../UI/Image/Image";
 import Row from "../../UI/Grid/Row/Row";
 import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";

@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
 
 import IUser from "./interface/interfaceUsers";
-import TFormInputs from "./types/TFormInputs";
 import IDevices from "./interface/interfaceDevices";
+import TFormInputs from "./types/TFormInputs";
 class Store {
   users!: IUser[];
   products!: IDevices;

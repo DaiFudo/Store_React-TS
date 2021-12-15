@@ -1,5 +1,5 @@
-/* export type IUsers = Array<IUser>; */
 import ICardInfo from "../interface/interfaceCard";
+
 interface IUser {
   likes: ICardInfo[];
   basket: ICardInfo[];

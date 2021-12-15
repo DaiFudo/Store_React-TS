@@ -13,7 +13,6 @@ class StoreAccount {
   }
   updateLike(user: ICardInfo) {
     this.user.likes = [...(this.user!.likes ?? []), user];
-    console.log(this);
   }
   updateBasket(user: ICardInfo) {
     this.user.basket = [...(this.user!.basket ?? []), user];

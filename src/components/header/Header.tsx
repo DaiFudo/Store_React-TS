@@ -13,7 +13,18 @@ import UserPannel from "./UserPannel/UserPannel";
 const Header: React.FC = observer(() => {
   const location = useLocation();
   let navigate = useNavigate();
-
+  const AnimHeaderTitle = () => {
+    return (
+      <div className="disappear">
+        <span>S</span>
+        <span>T</span>
+        <span>O</span>
+        <span>R</span>
+        <span>E</span>
+        <span>👾</span>
+      </div>
+    );
+  };
   const ChangerUserPannel = () => {
     if (location.pathname === "/profile" || location.pathname === "/admin") {
       return <></>;
@@ -29,7 +40,7 @@ const Header: React.FC = observer(() => {
           <div onClick={() => navigate("/")}>
             <PageHeader
               style={{ cursor: "pointer" }}
-              title="Store 👾 "
+              title={<AnimHeaderTitle />}
               subTitle={UserName()}
             />
           </div>

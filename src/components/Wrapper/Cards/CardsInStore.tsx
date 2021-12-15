@@ -3,7 +3,6 @@ import ICardInfo from "../../../store/interface/interfaceCard";
 
 import statusItemChanger from "../../../app/utils/statusItemChanger";
 
-import { Image, Rate, Skeleton } from "antd";
 import Meta from "antd/lib/card/Meta";
 
 import Card from "../../UI/Card/Card";
@@ -12,6 +11,9 @@ import PlusOutlined from "../../UI/Icons/PlusOutlined";
 import ShoppingOutlined from "../../UI/Icons/ShoppingOutlined";
 import Col from "../../UI/Grid/Col/Col";
 import Row from "../../UI/Grid/Row/Row";
+import Image from "../../UI/Image/Image";
+import Skeleton from "../../UI/Skeleton/Skeleton";
+import Rate from "../../UI/Rate/Rate";
 
 const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
   const filterCards = store.products.devices[selectMenuItem];

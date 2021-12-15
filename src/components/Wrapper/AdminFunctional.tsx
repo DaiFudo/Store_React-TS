@@ -9,7 +9,7 @@ import AdminListItems from "./AdminList/AdminListItems";
 
 const AdminFunctional: React.FC = observer(() => {
   const [selectMenuItemForAdministration, setSelectMenuItemForAdministration] =
-    useState<"createmod" | "users" | "devices">("users");
+    useState<"createmod" | "users" | "devices">("createmod");
 
   return (
     <Row>
@@ -22,7 +22,10 @@ const AdminFunctional: React.FC = observer(() => {
         />
       </Col>
       <Col span={18}>
-        <AdminListItems />
+        <AdminListItems
+          //@ts-ignore FIXIT
+          selectMenuItemForAdministration={selectMenuItemForAdministration}
+        />
       </Col>
     </Row>
   );
