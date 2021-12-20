@@ -23,7 +23,7 @@ const Authorization = () => {
   };
 
   const logOut = () => {
-    storeAccount.handleAccount(undefined!);
+    storeAccount.handleAccount(null!);
   };
 
   const regOn = () => {
@@ -56,9 +56,13 @@ const Authorization = () => {
     );
   };
 
+  const AuthVisibleBtns = () => {
+    return storeAccount.user?.nickname ? regOn() : regOff();
+  };
+
   return (
     <div>
-      {storeAccount.user?.nickname ? regOn() : regOff()}
+      <AuthVisibleBtns />
       <Modal
         title="Auth"
         visible={visible}

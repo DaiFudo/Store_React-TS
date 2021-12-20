@@ -1,4 +1,4 @@
-import StoreAllItems from "../components/Wrapper/StoreAllItems";
+import StoreAllItems from "../components/Common/StoreAllItems";
 import Header from "../components/Header/Header";
 
 const Main: React.FC = () => {

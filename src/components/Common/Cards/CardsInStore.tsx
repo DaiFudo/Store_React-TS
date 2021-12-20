@@ -1,7 +1,7 @@
 import store from "../../../store/store";
-import ICardInfo from "../../../store/interface/interfaceCard";
+import { ICardInfo, ICategory } from "../../../interface/interfaces";
 
-import statusItemChanger from "../../../app/utils/statusItemChanger";
+import statusItemChanger from "../../../utils/statusItemChanger";
 
 import Meta from "antd/lib/card/Meta";
 
@@ -9,54 +9,35 @@ import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
 import PlusOutlined from "../../UI/Icons/PlusOutlined";
 import ShoppingOutlined from "../../UI/Icons/ShoppingOutlined";
-import Col from "../../UI/Grid/Col/Col";
-import Row from "../../UI/Grid/Row/Row";
+import Col from "../../UI/Grid/Col";
+import Row from "../../UI/Grid/Row";
 import Image from "../../UI/Image/Image";
 import Skeleton from "../../UI/Skeleton/Skeleton";
 import Rate from "../../UI/Rate/Rate";
 
+import "./priceItems.css";
+
 const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
-  const filterCards = store.products.devices[selectMenuItem];
-  function randomInteger(min: number, max: number) {
+  const filterCards: ICategory = store.products.category[selectMenuItem];
+  const randomInteger = (min: number, max: number) => {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
-  }
+  };
   return (
     <div>
       <Row gutter={[48, 24]}>
         {filterCards ? (
           filterCards!.map((item: ICardInfo) => {
-            const asd = () => {
+            const priceItems = () => {
               if (item.promotion <= item.price && item.promotion !== 0) {
                 return (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                    }}
-                  >
-                    <div
-                      style={{
-                        textDecoration: "line-through",
-                        color: "#d1d1e0",
-                      }}
-                    >
-                      {item.price}$
-                    </div>
-                    <div
-                      style={{
-                        fontWeight: "bold",
-                        color: "#33cc33",
-                        textShadow: "1px 1px 1px  1px #000",
-                      }}
-                    >
-                      {item.promotion}$ Sales
-                    </div>
+                  <div className="wrapper__price">
+                    <div className="full__price__before">{item.price}$</div>
+                    <div className="sale__price">{item.promotion}$ Sales</div>
                   </div>
                 );
               } else {
-                return <div style={{ fontWeight: "bold" }}>{item.price}$</div>;
+                return <div className="full__price">{item.price}$</div>;
               }
             };
             return (
@@ -84,7 +65,7 @@ const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
                 >
                   <Image src={item.img} />
                   <Rate allowHalf value={randomInteger(2, 5)} />
-                  <Meta title={item.name} description={asd()} />
+                  <Meta title={item.name} description={priceItems()} />
                 </Card>
               </Col>
             );

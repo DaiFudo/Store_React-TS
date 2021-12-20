@@ -1,10 +1,6 @@
 import storeAccount from "../../../../store/storeAccount";
 
 const AdminBtnVisible = () => {
-  if (storeAccount.user.admin) {
-    return <>Admin</>;
-  } else {
-    <></>;
-  }
+  storeAccount.user.admin ? <>Admin</> : <></>;
 };
 export default AdminBtnVisible;

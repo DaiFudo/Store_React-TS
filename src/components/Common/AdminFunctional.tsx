@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
 
-import Col from "../UI/Grid/Col/Col";
-import Row from "../UI/Grid/Row/Row";
+import Col from "../UI/Grid/Col";
+import Row from "../UI/Grid/Row";
 
 import MenuInAdminPannel from "./Menu/MenuInAdminPannel";
 import AdminListItems from "./AdminList/AdminListItems";

@@ -10,20 +10,25 @@ import InputNumber from "../../UI/Input/InputNumber";
 import Input from "../../UI/Input/Input";
 
 const CreateModeCategory = () => {
-  function onFinish(values: TFormInputs) {
+  const onFinish = (values: TFormInputs) => {
     let id = uid();
     const formValues = { ...values, id };
     let keyCategory = formValues.category;
-    if (keyCategory === "mouses") {
-      store.setMouses(formValues);
-    } else if (keyCategory === "keyboards") {
-      store.setKeyboards(formValues);
-    } else if (keyCategory === "cpu") {
-      store.setCpu(formValues);
-    } else if (keyCategory === "headphones") {
-      store.setHeadphones(formValues);
+    switch (keyCategory) {
+      case "mouses":
+        store.setMouses(formValues);
+        break;
+      case "keyboards":
+        store.setKeyboards(formValues);
+        break;
+      case "cpu":
+        store.setCpu(formValues);
+        break;
+      case "headphones":
+        store.setHeadphones(formValues);
+        break;
     }
-  }
+  };
 
   return (
     <Form

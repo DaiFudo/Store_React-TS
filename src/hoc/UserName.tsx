@@ -1,4 +1,4 @@
-import storeAccount from "../../store/storeAccount";
+import storeAccount from "../store/storeAccount";
 
 const UserName = () => {
   if (storeAccount.user) {

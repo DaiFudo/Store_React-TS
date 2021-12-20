@@ -1,7 +1,7 @@
 import { Menu } from "antd";
 
-import Col from "../../UI/Grid/Col/Col";
-import Row from "../../UI/Grid/Row/Row";
+import Col from "../../UI/Grid/Col";
+import Row from "../../UI/Grid/Row";
 
 interface MenuInAdminPannel {
   setSelectMenuItemForAdministration: React.Dispatch<

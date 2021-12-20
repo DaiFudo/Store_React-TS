@@ -4,23 +4,19 @@ import { toJS } from "mobx";
 
 import { message } from "antd";
 
-import ICardInfo from "../../store/interface/interfaceCard";
-import StoreAccount from "../../store/storeAccount";
+import { ICardInfo } from "../interface/interfaces";
+import StoreAccount from "../store/storeAccount";
 
 import warn from "./warn";
 
 const statusItemChanger = (item: ICardInfo, category: string) => {
   if (StoreAccount.user) {
     if (category === "liked") {
-      const allItems = StoreAccount.user.likes.map((item: ICardInfo) =>
-        toJS(item)
-      );
+      const allItems = StoreAccount.user.likes.map((item: ICardInfo) => item);
       const numberDeletedItem: number = allItems.findIndex(
-        (itemFinder) => itemFinder.name === item.name
+        (itemFinder: ICardInfo) => itemFinder.name === item.name
       );
-      const names = StoreAccount.user.likes.map((item: ICardInfo) =>
-        toJS(item.name)
-      );
+      const names = StoreAccount.user.likes.map((item: ICardInfo) => item.name);
       const findName = names?.includes(item.name);
       if (!findName) {
         message.success(`Add: ${item.name}`);
@@ -33,14 +29,12 @@ const statusItemChanger = (item: ICardInfo, category: string) => {
         }
       }
     } else if (category === "basket") {
-      const allItems = StoreAccount.user.basket.map((item: ICardInfo) =>
-        toJS(item)
-      );
+      const allItems = StoreAccount.user.basket.map((item: ICardInfo) => item);
       const numberDeletedItem: number = allItems.findIndex(
-        (itemFinder) => itemFinder.name === item.name
+        (itemFinder: ICardInfo) => itemFinder.name === item.name
       );
-      const names = StoreAccount.user.basket.map((item: ICardInfo) =>
-        toJS(item.name)
+      const names = StoreAccount.user.basket.map(
+        (item: ICardInfo) => item.name
       );
       const findName = names?.includes(item.name);
       if (!findName) {

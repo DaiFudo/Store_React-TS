@@ -2,8 +2,8 @@ import { observer } from "mobx-react-lite";
 import StoreAccount from "../../../store/storeAccount";
 
 import { Menu } from "antd";
-import Col from "../../UI/Grid/Col/Col";
-import Row from "../../UI/Grid/Row/Row";
+import Col from "../../UI/Grid/Col";
+import Row from "../../UI/Grid/Row";
 
 interface MenuListProfile {
   setSelectMenuItemForProfile: React.Dispatch<React.SetStateAction<string>>;

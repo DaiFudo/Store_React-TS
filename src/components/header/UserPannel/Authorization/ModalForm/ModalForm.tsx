@@ -3,7 +3,7 @@ import React from "react";
 import Store from "../../../../../store/store";
 import StoreAccount from "../../../../../store/storeAccount";
 
-import IUser from "../../../../../store/interface/interfaceUsers";
+import { IUser } from "../../../../../interface/interfaces";
 
 import { Form } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";

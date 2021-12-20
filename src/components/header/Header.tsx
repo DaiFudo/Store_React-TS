@@ -4,10 +4,10 @@ import { observer } from "mobx-react-lite";
 
 import "./styles.css";
 import PageHeader from "../UI/PageHeader/PageHeader";
-import Row from "../UI/Grid/Row/Row";
-import Col from "../UI/Grid/Col/Col";
+import Row from "../UI/Grid/Row";
+import Col from "../UI/Grid/Col";
 
-import UserName from "../../app/utils/UserName";
+import UserName from "../../hoc/UserName";
 import UserPannel from "./UserPannel/UserPannel";
 
 const Header: React.FC = observer(() => {

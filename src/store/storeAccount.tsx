@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-import IUser from "./interface/interfaceUsers";
-import ICardInfo from "./interface/interfaceCard";
+import { IUser, ICardInfo } from "../interface/interfaces";
 
 class StoreAccount {
   user!: IUser;

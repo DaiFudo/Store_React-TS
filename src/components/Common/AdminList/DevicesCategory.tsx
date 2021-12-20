@@ -4,8 +4,7 @@ import { toJS } from "mobx";
 import store from "../../../store/store";
 import storeAccount from "../../../store/storeAccount";
 
-import ICardInfo from "../../../store/interface/interfaceCard";
-import IDevices from "../../../store/interface/interfaceDevices";
+import { ICardInfo, ICategory } from "../../../interface/interfaces";
 
 import { Table, Typography } from "antd";
 
@@ -19,7 +18,7 @@ const DeviceCategory = () => {
 
   const updateData = () => {
     const allItemsDevices: ICardInfo[] = [];
-    let allItems: ICardInfo = toJS(store.products.devices);
+    let allItems: ICategory = toJS(store.products.category);
     for (let items in allItems) {
       for (let fullListItems of allItems[items]) {
         allItemsDevices.push(fullListItems);
@@ -29,7 +28,9 @@ const DeviceCategory = () => {
   };
 
   const deleteDevices = (items: ICardInfo) => {
-    const all: IDevices = JSON.parse(JSON.stringify(store.products.devices));
+    const all: ICategory = JSON.parse(
+      JSON.stringify(store.products.category)
+    );
     Object.entries(all!).forEach(([key, value]) => {
       for (let allItems of value) {
         if (allItems.name === items.name) {
@@ -37,7 +38,7 @@ const DeviceCategory = () => {
             (item: ICardInfo) => item.name === items.name
           );
           all[key].splice(indexItem, 1);
-          store.setDevices(all);
+          store.setCategories(all);
         }
       }
     });

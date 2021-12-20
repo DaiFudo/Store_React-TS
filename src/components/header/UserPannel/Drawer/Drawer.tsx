@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 import storeAccount from "../../../../store/storeAccount";
 
-import warn from "../../../../app/utils/warn";
+import warn from "../../../../utils/warn";
 
 import Button from "../../../UI/Button/Button";
 import HeartOutlined from "../../../UI/Icons/HeartOutlined";
 import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
 import Drawer from "../../../UI/Drawer/Drawer";
+import { ICardInfo } from "../../../../interface/interfaces";
 
 const Drawler = () => {
   const [visible, setVisibleLikes] = useState(false);
@@ -28,12 +29,12 @@ const Drawler = () => {
   };
 
   const likedsItems = () => {
-    return storeAccount.user?.likes.map((item) => (
+    return storeAccount.user?.likes.map((item: ICardInfo) => (
       <div key={item.id}>{item.name}</div>
     ));
   };
   const shoppedItems = () => {
-    return storeAccount.user?.basket.map((item) => (
+    return storeAccount.user?.basket.map((item: ICardInfo) => (
       <div key={item.id}>{item.name}</div>
     ));
   };

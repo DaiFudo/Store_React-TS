@@ -1,8 +1,8 @@
 /* Показывает уведомление о подписке/добавление в корзину на  
  основной странице и добавляет/удаляет элемент в localStorage */
 
-import ICardInfo from "../../store/interface/interfaceCard";
-import StoreAccount from "../../store/storeAccount";
+import { ICardInfo } from "../interface/interfaces";
+import StoreAccount from "../store/storeAccount";
 
 import { message } from "antd";
 

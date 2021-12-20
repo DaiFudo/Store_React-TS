@@ -1,17 +1,19 @@
 import React from "react";
 
+import ProfileUserItems from "../components/Common/ProfileUsers";
 import Header from "../components/Header/Header";
-import AdminFunctional from "../components/Common/AdminFunctional";
+
 import ChekerLogin from "../hoc/ChekerLogin";
 
-const Admin: React.FC = () => {
+const AuthorizedAccount: React.FC = () => {
   ChekerLogin();
+
   return (
     <>
       <Header />
-      <AdminFunctional />
+      <ProfileUserItems />
     </>
   );
 };
 
-export default Admin;
+export default AuthorizedAccount;

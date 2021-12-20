@@ -1,11 +1,10 @@
 import { makeAutoObservable } from "mobx";
 
-import IUser from "./interface/interfaceUsers";
-import IDevices from "./interface/interfaceDevices";
+import { IUser, ICategory } from "../interface/interfaces";
 import TFormInputs from "./types/TFormInputs";
 class Store {
   users!: IUser[];
-  products!: IDevices;
+  products!: ICategory;
   constructor() {
     makeAutoObservable(this);
   }
@@ -13,32 +12,32 @@ class Store {
   setUsers(users: IUser[]) {
     this.users = users;
   }
-  setDevices(devices: any) {
-    this.products.devices = devices;
+  setCategories(category: ICategory) {
+    this.products.category = category;
   }
-  setProducts(devices: IDevices) {
-    this.products = devices;
+  setProducts(category: ICategory) {
+    this.products = category;
   }
   setMouses(mouses: TFormInputs) {
-    this.products.devices.mouses = [
-      ...(this.products.devices.mouses ?? []),
+    this.products.category.mouses = [
+      ...(this.products.category.mouses ?? []),
       mouses,
     ];
   }
   setHeadphones(headphones: TFormInputs) {
-    this.products.devices.headphones = [
-      ...(this.products.devices.headphones ?? []),
+    this.products.category.headphones = [
+      ...(this.products.category.headphones ?? []),
       headphones,
     ];
   }
   setKeyboards(keyboards: TFormInputs) {
-    this.products.devices.keyboards = [
-      ...(this.products.devices.keyboards ?? []),
+    this.products.category.keyboards = [
+      ...(this.products.category.keyboards ?? []),
       keyboards,
     ];
   }
   setCpu(cpu: TFormInputs) {
-    this.products.devices.cpu = [...(this.products!.devices.cpu ?? []), cpu];
+    this.products.category.cpu = [...(this.products!.category.cpu ?? []), cpu];
   }
 }
 export default new Store();
