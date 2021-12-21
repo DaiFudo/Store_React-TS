@@ -1,10 +1,15 @@
-/* Показывает уведомление о подписке/добавление в корзину на  
- основной странице и добавляет/удаляет элемент в localStorage */
-
 import { ICardInfo } from "../interface/interfaces";
 import StoreAccount from "../store/storeAccount";
 
 import { message } from "antd";
+
+/**
+ * Показывает уведомление покупки странице профиля, добавляет/удаляет элемент в StoreAccount
+ *
+ * @param {ICardInfo} item
+ * @param {string} category
+ * @return {*} Возвращает исчерпывающее сообщение для пользователя, в UI.
+ */
 
 const byuingItemsUser = (item: ICardInfo, category: string) => {
   let userMoney = StoreAccount.user.money;

@@ -1,12 +1,16 @@
-/* Показывает уведомление о подписке/добавление в корзину на  
- основной странице и добавляет/удаляет элемент в localStorage */
-
 import { message } from "antd";
 
 import { ICardInfo } from "../interface/interfaces";
 import StoreAccount from "../store/storeAccount";
 
 import warn from "./warn";
+
+/**
+ * Показывает уведомление о подписке/добавление в корзину на  основной(Main) странице и добавляет/удаляет элемент в StoreAccount
+ * Если человек не авторизован - показывает предупреждение, требующее авторизоваться или зарегистрироваться.
+ * @param {ICardInfo} item
+ * @param {string} category
+ */
 
 const statusItemChanger = (item: ICardInfo, category: string) => {
   if (StoreAccount.user) {
