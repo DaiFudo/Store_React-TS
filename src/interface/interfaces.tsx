@@ -17,6 +17,7 @@ export interface ICardInfo {
 }
 
 export interface IUser {
+  [x: string]: any;
   likes: ICardInfo[];
   basket: ICardInfo[];
   buying: ICardInfo[];

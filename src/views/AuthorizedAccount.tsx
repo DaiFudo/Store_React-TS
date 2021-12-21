@@ -1,9 +1,9 @@
 import React from "react";
 
-import ProfileUserItems from "../components/Common/ProfileUsers";
+import StoreAllItems from "../components/Common/StoreAllItems";
 import Header from "../components/Header/Header";
 
-import ChekerLogin from "../hoc/ChekerLogin";
+import ChekerLogin from "../hocs/ChekerLogin";
 
 const AuthorizedAccount: React.FC = () => {
   ChekerLogin();
@@ -11,7 +11,7 @@ const AuthorizedAccount: React.FC = () => {
   return (
     <>
       <Header />
-      <ProfileUserItems />
+      <StoreAllItems />
     </>
   );
 };

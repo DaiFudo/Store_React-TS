@@ -7,9 +7,9 @@ import DeviceCategory from "./DevicesCategory";
 import CreateModeCategory from "./CreateModeCategory";
 
 const AdminListItems: React.FC<{
-  selectMenuItemForAdministration: "createmod" | "users" | "devices";
+  selectMenuItem: string;
 }> = observer((props) => {
-  let selectAdminMenuCategory = props.selectMenuItemForAdministration;
+  let selectAdminMenuCategory = props.selectMenuItem;
 
   const SelectorCategories = () => {
     if (selectAdminMenuCategory === "users") {
@@ -26,4 +26,5 @@ const AdminListItems: React.FC<{
   };
   return <SelectorCategories />;
 });
+
 export default AdminListItems;

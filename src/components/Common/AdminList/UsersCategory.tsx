@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 import store from "../../../store/store";
 import storeAccount from "../../../store/storeAccount";
 
-import { IUser, ICardInfo } from "../../../interface/interfaces";
+import { IUser } from "../../../interface/interfaces";
 
 import { Typography } from "antd";
 import Table from "antd/lib/table/Table";
@@ -13,8 +13,8 @@ import Space from "../../UI/Space/Space";
 import deleteAccount from "./AdminFunctional/DeleteAccountFunctional";
 import updaterBanAccount from "./AdminFunctional/UpdateBanAccount";
 
-const UserCategory = observer(() => {
-  const [usersData, setUsersData] = useState<any>(toJS(store.users));
+const UserCategory: React.FC = observer(() => {
+  const [usersData, setUsersData] = useState(toJS(store.users));
 
   useEffect(() => {
     setUsersData(toJS(store.users));

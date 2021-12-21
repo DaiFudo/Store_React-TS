@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { toJS } from "mobx";
 import store from "../../../store/store";
 import storeAccount from "../../../store/storeAccount";
 
@@ -10,7 +9,7 @@ import { Table, Typography } from "antd";
 
 import Space from "../../UI/Space/Space";
 
-const DeviceCategory = () => {
+const DeviceCategory: React.FC = () => {
   const [tableDevices, setTableDevices] = useState<ICardInfo[]>([]);
   useEffect(() => {
     updateData();
@@ -18,7 +17,7 @@ const DeviceCategory = () => {
 
   const updateData = () => {
     const allItemsDevices: ICardInfo[] = [];
-    let allItems: ICategory = toJS(store.products.category);
+    let allItems: ICategory = store.products.category;
     for (let items in allItems) {
       for (let fullListItems of allItems[items]) {
         allItemsDevices.push(fullListItems);
@@ -28,17 +27,17 @@ const DeviceCategory = () => {
   };
 
   const deleteDevices = (items: ICardInfo) => {
-    const all: ICategory = JSON.parse(
+    const allListItems: ICategory = JSON.parse(
       JSON.stringify(store.products.category)
     );
-    Object.entries(all!).forEach(([key, value]) => {
+    Object.entries(allListItems!).forEach(([key, value]) => {
       for (let allItems of value) {
         if (allItems.name === items.name) {
-          const indexItem: ICardInfo = all[key].findIndex(
+          const indexItem: ICardInfo = allListItems[key].findIndex(
             (item: ICardInfo) => item.name === items.name
           );
-          all[key].splice(indexItem, 1);
-          store.setCategories(all);
+          allListItems[key].splice(indexItem, 1);
+          store.setCategories(allListItems);
         }
       }
     });

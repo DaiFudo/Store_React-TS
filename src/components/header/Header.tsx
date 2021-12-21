@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
-import "./styles.css";
+import "./header.css";
 import PageHeader from "../UI/PageHeader/PageHeader";
 import Row from "../UI/Grid/Row";
 import Col from "../UI/Grid/Col";
 
-import UserName from "../../hoc/UserName";
+import UserName from "../../hocs/UserName";
 import UserPannel from "./UserPannel/UserPannel";
 
 const Header: React.FC = observer(() => {

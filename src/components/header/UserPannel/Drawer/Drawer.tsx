@@ -9,9 +9,10 @@ import Button from "../../../UI/Button/Button";
 import HeartOutlined from "../../../UI/Icons/HeartOutlined";
 import ShoppingCartOutlined from "../../../UI/Icons/ShoppingCartOutlined";
 import Drawer from "../../../UI/Drawer/Drawer";
+
 import { ICardInfo } from "../../../../interface/interfaces";
 
-const Drawler = () => {
+const Drawler: React.FC = () => {
   const [visible, setVisibleLikes] = useState(false);
   const [visibles, setVisiblesShopping] = useState(false);
 

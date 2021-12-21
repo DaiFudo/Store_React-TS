@@ -1,7 +1,7 @@
 import { IUser } from "../../../../interface/interfaces";
 import store from "../../../../store/store";
 
-const deleteAccount = (items: IUser, usersData: any) => {
+const deleteAccount = (items: IUser, usersData: IUser[]) => {
   const indexUser = usersData.findIndex(
     (userStore: IUser) => userStore === items
   );

@@ -1,6 +1,5 @@
 /* Показывает уведомление о подписке/добавление в корзину на  
  основной странице и добавляет/удаляет элемент в localStorage */
-import { toJS } from "mobx";
 
 import { message } from "antd";
 
@@ -19,16 +18,17 @@ const statusItemChanger = (item: ICardInfo, category: string) => {
       const names = StoreAccount.user.likes.map((item: ICardInfo) => item.name);
       const findName = names?.includes(item.name);
       if (!findName) {
-        message.success(`Add: ${item.name}`);
+        message.success(`Liked: ${item.name}`);
         StoreAccount.updateLike(item);
-      } else if (findName) {
-        message.warning(`Removed: ${item.name}`);
+      } else {
+        message.warning(`Unliked: ${item.name}`);
         allItems!.splice(numberDeletedItem, 1);
         if (!!allItems) {
           StoreAccount.deleteLike(allItems);
         }
       }
-    } else if (category === "basket") {
+    }
+    if (category === "basket") {
       const allItems = StoreAccount.user.basket.map((item: ICardInfo) => item);
       const numberDeletedItem: number = allItems.findIndex(
         (itemFinder: ICardInfo) => itemFinder.name === item.name
@@ -38,10 +38,10 @@ const statusItemChanger = (item: ICardInfo, category: string) => {
       );
       const findName = names?.includes(item.name);
       if (!findName) {
-        message.success(`Add: ${item.name}`);
+        message.success(`Add in basket: ${item.name}`);
         StoreAccount.updateBasket(item);
-      } else if (findName) {
-        message.warning(`Removed: ${item.name}`);
+      } else {
+        message.warning(`Removed from basket: ${item.name}`);
         allItems.splice(numberDeletedItem, 1);
         StoreAccount.deleteBasket(allItems);
       }

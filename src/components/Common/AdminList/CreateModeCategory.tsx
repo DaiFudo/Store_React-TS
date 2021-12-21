@@ -9,7 +9,7 @@ import Button from "../../UI/Button/Button";
 import InputNumber from "../../UI/Input/InputNumber";
 import Input from "../../UI/Input/Input";
 
-const CreateModeCategory = () => {
+const CreateModeCategory: React.FC = () => {
   const onFinish = (values: TFormInputs) => {
     let id = uid();
     const formValues = { ...values, id };
@@ -58,8 +58,10 @@ const CreateModeCategory = () => {
       <Form.Item name="promotion" label="Promotion">
         <InputNumber controls={false} addonAfter="$" />
       </Form.Item>
-      <Form.Item label="Button">
-        <Button htmlType="submit">Button</Button>
+      <Form.Item label="Success">
+        <Button type="primary" htmlType="submit">
+          Push!
+        </Button>
       </Form.Item>
     </Form>
   );

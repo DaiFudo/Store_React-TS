@@ -1,7 +1,7 @@
 import { IUser } from "../../../../interface/interfaces";
 import store from "../../../../store/store";
 
-const updaterBanAccount = (items: IUser, usersData: any) => {
+const updaterBanAccount = (items: IUser, usersData: IUser[]) => {
   const indexUser = usersData.findIndex(
     (userStore: IUser) => userStore === items
   );

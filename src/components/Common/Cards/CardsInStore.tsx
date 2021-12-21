@@ -17,9 +17,9 @@ import Rate from "../../UI/Rate/Rate";
 
 import "./priceItems.css";
 
-const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
+const ListCardsInStore: React.FC<ICardInfo> = ({ selectMenuItem }) => {
   const filterCards: ICategory = store.products.category[selectMenuItem];
-  const randomInteger = (min: number, max: number) => {
+  const randomRate = (min: number, max: number) => {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
   };
@@ -27,7 +27,7 @@ const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
     <div>
       <Row gutter={[48, 24]}>
         {filterCards ? (
-          filterCards!.map((item: ICardInfo) => {
+          filterCards.map((item: ICardInfo) => {
             const priceItems = () => {
               if (item.promotion <= item.price && item.promotion !== 0) {
                 return (
@@ -64,7 +64,7 @@ const ListCardsInStore = ({ selectMenuItem }: ICardInfo) => {
                   ]}
                 >
                   <Image src={item.img} />
-                  <Rate allowHalf value={randomInteger(2, 5)} />
+                  <Rate allowHalf value={randomRate(2, 5)} />
                   <Meta title={item.name} description={priceItems()} />
                 </Card>
               </Col>

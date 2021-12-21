@@ -8,7 +8,7 @@ import Space from "../../../UI/Space/Space";
 
 import storeAccount from "../../../../store/storeAccount";
 
-const Authorization = () => {
+const Authorization: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
 

@@ -2,10 +2,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import Button from "../components/UI/Button/Button";
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   let navigate = useNavigate();
   const location = useLocation();
-
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
